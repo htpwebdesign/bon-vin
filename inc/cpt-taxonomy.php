@@ -157,3 +157,4 @@ function bon_vin_register_taxonomies(){
     );
     register_taxonomy( 'bon-vin-menu-items', array( 'products' ), $args );
 }
+add_action('init', 'bon_vin_register_taxonomies');
