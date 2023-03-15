@@ -155,6 +155,6 @@ function bon_vin_register_taxonomies(){
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'menu-items' ),
     );
-    register_taxonomy( 'bon-vin-menu-items', array( 'products' ), $args );
+    register_taxonomy( 'bon-vin-menu-items', array( 'product' ), $args );
 }
 add_action('init', 'bon_vin_register_taxonomies');
