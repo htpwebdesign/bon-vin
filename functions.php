@@ -159,6 +159,9 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+// CPT and TAXONOMIES
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
