@@ -185,3 +185,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Automatically add locations into the career location taxonomy.
+ */
+function bon_vin_insert_taxonomy() {
+	$args = array(
+		'name' => 'bon-vin-locations' 
+	);
+	$location_post_types = get_post_types( $args, 'objects' );
+	foreach ($location_post_types as $location) {
+		$term = term_exists( $location -> post_title, 'bon-vin-career-locations' );
+		if ( $term == 0 || $term == null) {
+			wp_insert_term(
+				$location -> post_title,   // the term 
+				'bon-vin-career-locations', // the taxonomy
+				array(
+					'slug'        => $location -> post_name,
+				)
+			);
+		}	
+	}
+}
+add_action('save_post_bon-vin-locations','bon_vin_insert_taxonomy');
