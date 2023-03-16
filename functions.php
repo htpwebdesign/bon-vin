@@ -189,11 +189,24 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Automatically add locations into the career location taxonomy.
  */
-function bon_vin_insert_taxonomy($post_ID) {
-	$post = get_post( $post_ID );
-	wp_insert_term(
-		$post->post_title,   // the term 
-		'bon-vin-career-locations' // the taxonomy
-	);
-};
-add_action('publish_bon-vin-locations','bon_vin_insert_taxonomy');
+// function bon_vin_insert_taxonomy($post_ID) {
+// 	$post = get_post( $post_ID );
+// 	wp_insert_term(
+// 		$post->post_title,   // the term 
+// 		'bon-vin-career-locations' // the taxonomy
+// 	);
+// };
+// add_action('publish_bon-vin-locations','bon_vin_insert_taxonomy');
+
+// Listen for publishing of a new post
+function send_new_post($new_status, $old_status, $post) {
+	if('publish' === $new_status && 'publish' !== $old_status && $post->post_type === 'bon-vin-locations') {
+		wp_insert_term(
+					$post->post_title,   // the term 
+					'bon-vin-career-locations' // the taxonomy
+				);
+	}
+  }
+
+add_action('transition_post_status', 'send_new_post', 10, 3);
+
