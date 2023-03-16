@@ -196,4 +196,4 @@ function bon_vin_insert_taxonomy($post_ID) {
 		'bon-vin-career-locations' // the taxonomy
 	);
 };
-add_action('save_post_bon-vin-locations','bon_vin_insert_taxonomy');
+add_action('publish_bon-vin-locations','bon_vin_insert_taxonomy');
