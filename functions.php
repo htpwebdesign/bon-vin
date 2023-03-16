@@ -185,3 +185,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Automatically add locations into the career location taxonomy.
+ */
+function bon_vin_insert_taxonomy($post_ID) {
+	$post = get_post( $post_ID );
+	wp_insert_term(
+		$post->post_title,   // the term 
+		'bon-vin-career-locations' // the taxonomy
+	);
+};
+add_action('publish_bon-vin-locations','bon_vin_insert_taxonomy');
