@@ -203,3 +203,11 @@ function bon_vin_send_new_post($new_status, $old_status, $post) {
 
 add_action('transition_post_status', 'bon_vin_send_new_post', 10, 3);
 
+/**
+ * ACF Google maps API key
+ */
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyASjO6BZFisDkgBdgpupQL7LM6KO9Fvo-c';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
