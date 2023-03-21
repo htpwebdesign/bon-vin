@@ -50,6 +50,8 @@ function bon_vin_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'bon-vin' ),
+			'footer-left' => esc_html__( 'footer- left', 'bon-vin' ),
+			'footer-right' => esc_html__('footer- right', 'bon-vin')
 		)
 	);
 
