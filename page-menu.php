@@ -42,6 +42,7 @@ get_header();
 		if ( $query -> have_posts() ) :
 			?>
 			<div class="menu" id="menu-wine">
+			<h3>Wine</h3>
 			<?php
 			while ( $query -> have_posts() ) :
 				$query -> the_post();
@@ -76,6 +77,7 @@ get_header();
 		if ( $query -> have_posts() ) :
 			?>
 			<div class="menu" id="menu-food">
+			<h3>Food</h3>
 			<?php
 			while ( $query -> have_posts() ) :
 				$query -> the_post();
