@@ -12,20 +12,16 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bon-vin' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'bon-vin' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bon-vin' ), 'bon-vin', '<a href="http://underscores.me/">FWD 32</a>' );
-				?>
-		</div><!-- .site-info -->
+
+		<nav class="footer-navigation">
+			<?php
+			wp_nav_menu( array('theme_location' => 'footer-left') );
+			wp_nav_menu( array('theme_location' => 'footer-right') );
+			?>
+		</nav>
+
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
