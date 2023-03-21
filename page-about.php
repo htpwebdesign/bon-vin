@@ -17,22 +17,54 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<?php
+	if (function_exists('get_field')) {
 
-			get_template_part( 'template-parts/content', 'page' );
+		if ( get_field('about_img') ) {
+			the_field('about_img');
+		}
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+		if ( get_field('about_description') ) {
+			the_field('about_description');
+		}
 
-		endwhile; // End of the loop.
-		?>
+		if ( get_field('shop_cta') ) {
+			$link = get_field('shop_cta');
+			if ($link) {
+				$link_title = $link['title'];
+				$link_url = $link['url'];
+				?>
+				<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+				<?php
+			}
+		}
+
+		if ( get_field('locations_cta') ) {
+			$link = get_field('locations_cta');
+			if ($link) {
+				$link_title = $link['title'];
+				$link_url = $link['url'];
+				?>
+				<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+				<?php
+			}
+		}
+
+		if ( get_field('careers_cta') ) {
+			$link = get_field('careers_cta');
+			if ($link) {
+				$link_title = $link['title'];
+				$link_url = $link['url'];
+				?>
+				<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+				<?php
+			}
+		}
+
+	}
+	?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
