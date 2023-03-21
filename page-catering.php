@@ -1,11 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for displaying the catering page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,23 +11,51 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<div class="entry-content">
+		<?php 
+			if ( function_exists ( 'get_field' ) ) {
+				?>
+				<div classname="catering-description">
+				<?php
+				if ( get_field( 'catering_description' ) ) : ?>
+					<p><?php the_field( 'catering_description' ); ?></p>
+					<?php
+				endif;
+				?>
+				</div>
+				<div classname="catering-packages">
+				<?php
+				if ( get_field( 'packages_title' ) ) : ?>
+					<h2><?php the_field( 'packages_title' ); ?></h2>
+					<?php
+					
+				endif;
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
+				if ( get_field( 'packages' ) ) : 
+					if( have_rows('packages') ):
+						while( have_rows('packages') ) : the_row(); ?>
+						<h3><?php the_sub_field( 'package_name' ); ?></h3>
+						<p><?php the_sub_field( 'package_description' ); ?></p>
+						<?php
+						endwhile;
+					endif;
+				endif;
+			}
 		?>
-
+			<div classname="">
+				<?php
+				if ( function_exists ( 'gravity_form' ) ) {
+					gravity_form( 1, false, false, false, '', false );
+				}
+				?>
+			</div>
+		</div>
+	
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
