@@ -26,12 +26,13 @@ get_header();
 				?>
 				<div classname="logo">
 					<?php
-					if ( get_field( 'logo' ) ) : ?>
-						<img src="<?php the_field( 'logo' ); ?>"></img>
-						<?php
+					if (get_field('logo')): ?> 
+					<img src=" <?php the_field('logo'); ?> "/>
+					<?php
 					endif;
 					?>
-				</div>
+					
+				<div>
 
 				<div classname="shop-cta">
 				<?php 
@@ -86,6 +87,7 @@ get_header();
 				
 				<?php
 			}
+			
 		?>
 			
 	</div>
