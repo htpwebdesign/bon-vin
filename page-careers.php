@@ -23,17 +23,12 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
-		endwhile; // End of the loop.
-		?>
-
-<?php
-	
-	$taxonomy = 'bon-vin-career-locations';
-	$terms = get_terms( 
-		array(
-			'taxonomy' => $taxonomy
-		) 
-	);
+			$taxonomy = 'bon-vin-career-locations';
+			$terms = get_terms( 
+				array(
+					'taxonomy' => $taxonomy
+				) 
+			);
 
 	if ( $terms && ! is_wp_error( $terms ) ) {
 		foreach ( $terms as $term ) {
@@ -76,7 +71,10 @@ get_header();
 		}
 		wp_reset_postdata();
 	}
-	?>
+
+		endwhile; // End of the loop.
+		?>
+
 
 	</main><!-- #main -->
 
