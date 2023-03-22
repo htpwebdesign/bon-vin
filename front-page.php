@@ -15,24 +15,82 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<div class="logo">
+		<?php 
+			if ( function_exists ( 'get_field' ) ) {
+				?>
+				<div classname="logo">
+					<?php
+					if ( get_field( 'logo' ) ) : ?>
+						<img src="<?php the_field( 'logo' ); ?>"></img>
+						<?php
+					endif;
+					?>
+				</div>
 
-			get_template_part( 'template-parts/content', 'page' );
+				<div classname="shop-cta">
+				<?php 
+				if ( get_field('shop_cta') ) {
+					$link = get_field('shop_cta');
+					if ($link) {
+						$link_title = $link['title'];
+						$link_url = $link['url'];
+						?>
+						<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+						<?php
+					}
+				}?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				<div classname="wine-list">
+					<?php
+					if ( get_field( 'wine_list_title' ) ) : ?>
+						<p><?php the_field( 'wine_list_title' ); ?></p>
+						<?php
+					endif;
+					?>
+				</div> 
 
-		endwhile; // End of the loop.
+				<div classname="wine-list-description">
+				<?php
+					if ( get_field( 'wine_list_description' ) ) : ?>
+						<p><?php the_field( 'wine_list_description' ); ?></p>
+						<?php
+					endif;
+					?>
+				</div> 
+
+				<div classname="shop-all-cta">
+				<?php 
+				if ( get_field('shop_cta') ) {
+					$link = get_field('shop_all_cta');
+					if ($link) {
+						$link_title = $link['title'];
+						$link_url = $link['url'];
+						?>
+						<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+						<?php
+					}
+				}?>
+
+				<div classname="wine-list">
+					<?php
+
+					?>
+
+				</div>
+				
+				<?php
+			}
 		?>
-
-	</main><!-- #main -->
+			
+	</div>
+	
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
