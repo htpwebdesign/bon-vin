@@ -26,42 +26,58 @@ get_header();
 			<p><a href="#menu-food">Food</a></p>
 		</div>
 
+		<div class="menu" id="menu-wine">
+		<h2>Wine</h2>
 		<?php
-		$args = array(
-			'post_type' => 'product',
-			'posts_per_page' => -1,
-			'tax_query'      => array(
-				array(
-					'taxonomy' => 'bon-vin-menu-items',
-					'field'    => 'slug',
-					'terms'    => 'wine'
-				),
-			)
-		);
-		$query = new WP_QUERY( $args );
-		if ( $query -> have_posts() ) :
-			?>
-			<div class="menu" id="menu-wine">
-			<h3>Wine</h3>
-			<?php
-			while ( $query -> have_posts() ) :
-				$query -> the_post();
-				$id = get_the_ID();
-				$product = wc_get_product($id);
-				$product_price = $product->get_price();
+		$term_id = 25;
+		$taxonomy_name = 'product_cat';
+		$termchildren = get_term_children( $term_id, $taxonomy_name );
+		if ( $termchildren  ) : 
+			foreach ( $termchildren as $term ) : 
+				$term_name = get_term( $term )->name;
 				?>
-				<div class="menu-item">
-					<p><?php the_title(); ?></p>
-					<p><?php echo $product_price ?></p>
-				</div>
-				<?php		
-			endwhile;
-			wp_reset_postdata();
-			?>
-			</div>
-			<?php
+				<section>
+				<h3><?php echo $term_name ?></h3>
+				<?php
+				$args = array(
+					'post_type' => 'product',
+					'posts_per_page' => -1,
+					'tax_query' => array(
+						'relation'	   => 'AND',
+						array(
+							'taxonomy' => 'bon-vin-menu-items',
+							'field'    => 'slug',
+							'terms'    => 'wine'
+						),
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => $term_name							
+						)
+					)	
+				);
+				$query = new WP_QUERY( $args );
+				if ( $query -> have_posts() ) :
+					while ( $query -> have_posts() ) :
+						$query -> the_post();
+						$id = get_the_ID();
+						
+						$product = wc_get_product($id);
+						$product_price = $product->get_price();
+						?>
+						<div class="menu-item">
+							<p><?php the_title(); ?></p>
+							<p><?php echo $product_price ?></p>
+						</div>
+						<?php		
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				?>
+				</section>
+				<?php
+			endforeach;
 		endif;
-
 		$args = array(
 			'post_type' => 'product',
 			'posts_per_page' => -1,
@@ -77,7 +93,7 @@ get_header();
 		if ( $query -> have_posts() ) :
 			?>
 			<div class="menu" id="menu-food">
-			<h3>Food</h3>
+			<h2>Food</h2>
 			<?php
 			while ( $query -> have_posts() ) :
 				$query -> the_post();
