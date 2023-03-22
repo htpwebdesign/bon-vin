@@ -11,7 +11,16 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<header class="entry-header">
+
+
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', get_post_type() );
+			?>
+			<header class="entry-header">
             <?php the_title( "<h1 class=“entry-title”>", "</h1>" ); ?>
         </header><!-- .entry-header -->
 
@@ -52,14 +61,7 @@ if( $location ): ?>
      <!-- <iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ca/maps?center=<?php the_field('maps'); ?>&q=<?php the_field('maps'); ?>&zoom=14&size=300x300&output=embed&iwloc=near"></iframe><br /> -->
 		
 </div>
-
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
+<?php
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'bon-vin' ) . '</span> <span class="nav-title">%title</span>',
