@@ -20,6 +20,11 @@
 			?>
 		</nav>
 
+		<section>
+		<p><?php bloginfo( 'description' ); ?></p>
+		<p>&copy;<?php echo do_shortcode( '[year]' ); ?></p>
+		</section>
+
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
