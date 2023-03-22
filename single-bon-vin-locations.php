@@ -17,15 +17,15 @@ get_header();
 
 <div class="main-image-location">
 <?php
-if (function_exists("get_field")){
-	?>
-	<div class="main-image-location"></div>
-	<?php
-	if (get_field("single_location")) : ?>
-	<img src="<?php the_field("single_location");?>"></img>
-	<?php
-	endif;
+
+$image = get_field('single_location');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
 }
+?>
+<?php
+
 
 if ( get_field('cta') ) {
 	$link = get_field('cta');
