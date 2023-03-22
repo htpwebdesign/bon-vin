@@ -145,6 +145,10 @@ function bon_vin_scripts() {
 
 	wp_enqueue_script( 'bon-vin-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	// Load script from ACF Map Documentation
+	wp_enqueue_script( 'google_js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyASjO6BZFisDkgBdgpupQL7LM6KO9Fvo-c&callback=Function.prototype', '', '' );        // Map Helper Set up
+	wp_enqueue_script( 'map-helper', get_template_directory_uri() . '/js/googlemap.js', array('jquery','google_js'), _S_VERSION, true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
