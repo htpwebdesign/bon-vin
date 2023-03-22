@@ -19,7 +19,7 @@ get_header();
 		<?php 
 			if ( function_exists ( 'get_field' ) ) {
 				?>
-				<div classname="catering-description">
+				<div class="catering-description">
 				<?php
 				if ( get_field( 'catering_description' ) ) : ?>
 					<p><?php the_field( 'catering_description' ); ?></p>
@@ -27,7 +27,7 @@ get_header();
 				endif;
 				?>
 				</div>
-				<div classname="catering-packages">
+				<div class="catering-packages">
 				<?php
 				if ( get_field( 'packages_title' ) ) : ?>
 					<h2><?php the_field( 'packages_title' ); ?></h2>
@@ -43,14 +43,36 @@ get_header();
 						<?php
 						endwhile;
 					endif;
-				endif;
+				endif; ?>
+				</div>
+				<?php
 			}
 		?>
-			<div classname="">
+			<div class="catering-form">
 				<?php
 				if ( function_exists ( 'gravity_form' ) ) {
 					gravity_form( 1, false, false, false, '', false );
 				}
+				?>
+			</div>
+
+			<div class="catering-cta">
+			<?php
+				if ( get_field( 'catering_cta_blurb' ) ) : ?>
+					<p><?php the_field( 'catering_cta_blurb' ); ?></p>
+					<?php
+				endif;
+
+				if ( get_field( 'catering_cta' ) ) : 
+					$link = get_field('catering_cta');
+					if( $link ): 
+						$link_url = $link['url'];
+						$link_title = $link['title'];
+						?>
+						<a class="button" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+						<?php
+					endif;
+				endif;
 				?>
 			</div>
 		</div>
