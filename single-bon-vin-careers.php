@@ -52,6 +52,12 @@ get_header();
 				<p><?php the_field('how_to_apply'); ?></p>
 				<?php
 			}
+
+			if (get_field('job_email')) {
+				?>
+				<a href="mailto: <?php the_field('job_email') ?>">Apply</a>
+				<?php
+			}
 			?>
 			</section>
 			<?php
