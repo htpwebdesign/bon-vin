@@ -55,6 +55,64 @@ if( $location ): ?>
     <div class="acf-map" data-zoom="16">
         <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
     </div>
+<div class="location-description">
+	<?php
+	if ( get_field('location_description') ) {
+			the_field('location_description');
+		}
+	?>
+</div>
+
+<div class="contact-info">
+	<?php
+	if ( get_field('contact_title') ) {
+			the_field('contact_title');
+		}
+		if ( get_field('phone') ) {
+			the_field('phone');
+		}
+		
+		$email = get_field('email'); 
+if ($email) {
+    echo '<a href="mailto:' . $email . '">' . $email . '</a>';
+}
+	?>
+</div>
+
+<div class="hours-info">
+	<?php
+	if ( get_field('hours_title') ) {
+		the_field('hours_title');
+	}
+	?>
+</div>
+
+<div class="hours">
+<?php if (have_rows('hours')) : ?>
+    <ul>
+    <?php while (have_rows('hours')) : the_row(); ?>
+        <li>
+            <?php the_sub_field('day'); ?>
+            <?php the_sub_field('hours'); ?>
+            <?php // add more subfields as needed ?>
+        </li>
+    <?php endwhile; ?>
+    </ul>
+	<?php
+	// No value.
+else :
+    // Do something...
+endif;
+?>
+</div>
+
+<div class="apply">
+	<?php
+$link = get_field('career_cta');
+if( $link ): ?>
+    <a class="button" href="<?php echo esc_url( $link ); ?>">Apply Now</a>
+	<?php endif; ?>
+</div>
 
 <?php endif; ?>
 
