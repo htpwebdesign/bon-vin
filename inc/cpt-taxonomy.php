@@ -158,3 +158,10 @@ function bon_vin_register_taxonomies(){
     register_taxonomy( 'bon-vin-menu-items', array( 'product' ), $args );
 }
 add_action('init', 'bon_vin_register_taxonomies');
+
+function bonvin_rewrite_flush() {
+    bon_vin_register_custom_post_types();
+    bon_vin_register_taxonomies();
+    flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'bonvin_rewrite_flush' );

@@ -199,9 +199,3 @@ function my_acf_google_map_api( $api ){
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-function current_year() {
-    $year = date('Y');
-    return $year;
-}
-
-add_shortcode('year', 'current_year');
