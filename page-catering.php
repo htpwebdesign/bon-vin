@@ -11,6 +11,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<?php
+	while ( have_posts() ) :
+		the_post(); ?>
+
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
@@ -35,15 +39,15 @@ get_header();
 					
 				endif;
 
-				if ( get_field( 'packages' ) ) : 
-					if( have_rows('packages') ):
-						while( have_rows('packages') ) : the_row(); ?>
-						<h3><?php the_sub_field( 'package_name' ); ?></h3>
-						<p><?php the_sub_field( 'package_description' ); ?></p>
-						<?php
-						endwhile;
-					endif;
-				endif; ?>
+				
+				if( have_rows('packages') ):
+					while( have_rows('packages') ) : the_row(); ?>
+					<h3><?php the_sub_field( 'package_name' ); ?></h3>
+					<p><?php the_sub_field( 'package_description' ); ?></p>
+					<?php
+					endwhile;
+				endif;
+				 ?>
 				</div>
 				<?php
 			}
@@ -76,7 +80,10 @@ get_header();
 				?>
 			</div>
 		</div>
-	
+		<?php
+	endwhile; // End of the loop.
+	?>
+
 	</main><!-- #main -->
 
 <?php

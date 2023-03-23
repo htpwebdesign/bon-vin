@@ -21,23 +21,56 @@ get_header();
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
 
-		<div class="menu-nav">
-			<p><a href="#menu-wine">Wine</a></p>
-			<p><a href="#menu-food">Food</a></p>
-		</div>
+		<nav class="menu-nav">
+			<ul>
+			<li><a href="#menu-wine">Wine</a></li>
+			<li><a href="#menu-food">Food</a></li>
+			</ul>
+		</nav>
 
-		<div class="menu" id="menu-wine">
-		<h2>Wine</h2>
 		<?php
+		$ids = array();
+		$args = array(
+			'post_type' => 'product',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'bon-vin-menu-items',
+					'field'    => 'slug',
+					'terms'    => 'wine'
+				)
+			)	
+		);
+		$query = new WP_QUERY( $args );
+				if ( $query -> have_posts() ) :
+					while ( $query -> have_posts() ) :
+						$query -> the_post();
+						$terms = get_the_terms(get_the_ID(), 'product_cat');
+						foreach ($terms as $term ) {
+							if ( $term->parent > 0 ) {
+								$ids[] = $term->term_id;
+							}
+						}
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				
 		$term_id = 25;
 		$taxonomy_name = 'product_cat';
 		$termchildren = get_term_children( $term_id, $taxonomy_name );
-		if ( $termchildren  ) : 
+		if ( $termchildren  ) : ?>
+
+		<section class="menu" id="menu-wine">
+		<h2>Wine</h2>
+
+		<?php
 			foreach ( $termchildren as $term ) : 
 				$term_name = get_term( $term )->name;
-				?>
+				if (in_array($term, $ids)) : ?>
+
 				<section>
 				<h3><?php echo $term_name ?></h3>
+
 				<?php
 				$args = array(
 					'post_type' => 'product',
@@ -65,14 +98,17 @@ get_header();
 						$product = wc_get_product($id);
 						$product_price = $product->get_price();
 						?>
+
 						<div class="menu-item">
-							<p><?php the_title(); ?></p>
-							<p><?php echo $product_price ?></p>
+							<h4><?php the_title(); ?></h4>
+							<p>$<?php echo $product_price ?></p>
 						</div>
+
 						<?php		
 					endwhile;
 					wp_reset_postdata();
 				endif;
+			endif;
 				?>
 				</section>
 				<?php
@@ -92,7 +128,7 @@ get_header();
 		$query = new WP_QUERY( $args );
 		if ( $query -> have_posts() ) :
 			?>
-			<div class="menu" id="menu-food">
+			<section class="menu" id="menu-food">
 			<h2>Food</h2>
 			<?php
 			while ( $query -> have_posts() ) :
@@ -102,14 +138,14 @@ get_header();
 				$product_price = $product->get_price();
 				?>
 				<div class="menu-item">
-					<p><?php the_title(); ?></p>
-					<p><?php echo $product_price ?></p>
+					<h4><?php the_title(); ?></h4>
+					<p>$<?php echo $product_price ?></p>
 				</div>
 				<?php		
 			endwhile;
 			wp_reset_postdata();
 			?>
-			</div>
+			</section>
 			<?php
 		endif;
 		?>
