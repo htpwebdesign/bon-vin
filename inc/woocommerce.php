@@ -225,3 +225,17 @@ if ( ! function_exists( 'bon_vin_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+function bon_vin_shop_filters() {
+	?>
+	<div class="filters">
+		<span class="filter" data-filter="wine">WINE</span>
+		<span class="filter" data-filter="not-wine">NOT WINE</span>
+		<span class="filter" data-filter="all">ALL</span>
+	</div>
+	<?php
+}
+
+add_action(  'woocommerce_before_shop_loop', 'bon_vin_shop_filters' );
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
