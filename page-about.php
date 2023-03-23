@@ -18,50 +18,72 @@ get_header();
 	<main id="primary" class="site-main">
 
 	<?php
-	if (function_exists('get_field')) {
 
-		if ( get_field('about_img') ) {
-			the_field('about_img');
-		}
+	while ( have_posts() ) :
+		the_post();
 
-		if ( get_field('about_description') ) {
-			the_field('about_description');
-		}
+		get_template_part( 'template-parts/content', 'page' );
 
-		if ( get_field('shop_cta') ) {
-			$link = get_field('shop_cta');
-			if ($link) {
-				$link_title = $link['title'];
-				$link_url = $link['url'];
+		if (function_exists('get_field')) {
+			?>
+			<section>
+			<?php
+			$image = get_field('about_img');
+			$size = 'large';
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+			}
+	
+			if ( get_field('about_description') ) {
 				?>
-				<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+				<p><?php the_field('about_description'); ?></p>
 				<?php
 			}
-		}
+			?>
+			</section>
 
-		if ( get_field('locations_cta') ) {
-			$link = get_field('locations_cta');
-			if ($link) {
-				$link_title = $link['title'];
-				$link_url = $link['url'];
-				?>
-				<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
-				<?php
+			<nav>
+			<?php
+
+			if ( get_field('shop_cta') ) {
+				$link = get_field('shop_cta');
+				if ($link) {
+					$link_title = $link['title'];
+					$link_url = $link['url'];
+					?>
+					<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+					<?php
+				}
 			}
-		}
-
-		if ( get_field('careers_cta') ) {
-			$link = get_field('careers_cta');
-			if ($link) {
-				$link_title = $link['title'];
-				$link_url = $link['url'];
-				?>
-				<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
-				<?php
+	
+			if ( get_field('locations_cta') ) {
+				$link = get_field('locations_cta');
+				if ($link) {
+					$link_title = $link['title'];
+					$link_url = $link['url'];
+					?>
+					<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+					<?php
+				}
 			}
+	
+			if ( get_field('careers_cta') ) {
+				$link = get_field('careers_cta');
+				if ($link) {
+					$link_title = $link['title'];
+					$link_url = $link['url'];
+					?>
+					<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+					<?php
+				}
+			}
+			?>
+			</nav>
+			<?php
 		}
 
-	}
+	endwhile;
+
 	?>
 
 	</main><!-- #main -->
