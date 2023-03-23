@@ -55,7 +55,7 @@ get_header();
 				
 				if( have_rows('all_locations') ): 
 					?>
-					<div class="acf-map-locations" data-zoom="16">
+					<div class="acf-map" data-zoom="16">
 						<?php while ( have_rows('all_locations') ) : the_row(); 
 						
 
