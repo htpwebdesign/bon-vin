@@ -39,7 +39,7 @@ get_header();
 					<section>
 					<?php
 					$image = get_field('single_location');
-					$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+					$size = 'medium';
 					if( $image ) {
 						echo wp_get_attachment_image( $image, $size );
 					}
@@ -57,9 +57,7 @@ get_header();
 					?>
 					<div class="acf-map" data-zoom="16">
 						<?php while ( have_rows('all_locations') ) : the_row(); 
-						
 
-							// Load sub field values.
 							$location = get_sub_field('location_address');
 							$title = get_sub_field('location_name');
 							?>

@@ -28,8 +28,10 @@ get_header();
 			?>
 			<section>
 			<?php
-			if ( get_field('about_img') ) {
-				the_field('about_img');
+			$image = get_field('about_img');
+			$size = 'large';
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
 			}
 	
 			if ( get_field('about_description') ) {
@@ -37,7 +39,12 @@ get_header();
 				<p><?php the_field('about_description'); ?></p>
 				<?php
 			}
-	
+			?>
+			</section>
+
+			<nav>
+			<?php
+
 			if ( get_field('shop_cta') ) {
 				$link = get_field('shop_cta');
 				if ($link) {
@@ -48,11 +55,6 @@ get_header();
 					<?php
 				}
 			}
-			?>
-			</section>
-
-			<nav>
-			<?php
 	
 			if ( get_field('locations_cta') ) {
 				$link = get_field('locations_cta');
