@@ -16,17 +16,20 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<?php
+	while ( have_posts() ) :
+		the_post(); ?>
 
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		
+			<nav class="menu-nav">
+				<ul>
+				<li><a href="#menu-wine">Wine</a></li>
+				<li><a href="#menu-food">Food</a></li>
+				</ul>
+			</nav>
 		</header><!-- .entry-header -->
-
-		<nav class="menu-nav">
-			<ul>
-			<li><a href="#menu-wine">Wine</a></li>
-			<li><a href="#menu-food">Food</a></li>
-			</ul>
-		</nav>
 
 		<?php
 		$ids = array();
@@ -68,51 +71,53 @@ get_header();
 				$term_name = get_term( $term )->name;
 				if (in_array($term, $ids)) : ?>
 
-				<section>
-				<h3><?php echo $term_name ?></h3>
+					<section class="menu-sub-section">
+					<h3><?php echo $term_name ?></h3>
 
-				<?php
-				$args = array(
-					'post_type' => 'product',
-					'posts_per_page' => -1,
-					'tax_query' => array(
-						'relation'	   => 'AND',
-						array(
-							'taxonomy' => 'bon-vin-menu-items',
-							'field'    => 'slug',
-							'terms'    => 'wine'
-						),
-						array(
-							'taxonomy' => 'product_cat',
-							'field' => 'slug',
-							'terms' => $term_name							
-						)
-					)	
-				);
-				$query = new WP_QUERY( $args );
-				if ( $query -> have_posts() ) :
-					while ( $query -> have_posts() ) :
-						$query -> the_post();
-						$id = get_the_ID();
-						
-						$product = wc_get_product($id);
-						$product_price = $product->get_price();
-						?>
+					<?php
+					$args = array(
+						'post_type' => 'product',
+						'posts_per_page' => -1,
+						'tax_query' => array(
+							'relation'	   => 'AND',
+							array(
+								'taxonomy' => 'bon-vin-menu-items',
+								'field'    => 'slug',
+								'terms'    => 'wine'
+							),
+							array(
+								'taxonomy' => 'product_cat',
+								'field' => 'slug',
+								'terms' => $term_name							
+							)
+						)	
+					);
+					$query = new WP_QUERY( $args );
+					if ( $query -> have_posts() ) :
+						while ( $query -> have_posts() ) :
+							$query -> the_post();
+							$id = get_the_ID();
+							
+							$product = wc_get_product($id);
+							$product_price = $product->get_price();
+							?>
 
-						<div class="menu-item">
-							<h4><?php the_title(); ?></h4>
-							<p>$<?php echo $product_price ?></p>
-						</div>
+							<div class="menu-item">
+								<h4><?php the_title(); ?></h4>
+								<p>$<?php echo $product_price ?></p>
+							</div>
 
-						<?php		
-					endwhile;
-					wp_reset_postdata();
+							<?php		
+						endwhile;
+						wp_reset_postdata();
+					endif; ?>
+					</section>
+					<?php
 				endif;
-			endif;
-				?>
+			endforeach;
+			?>
 				</section>
 				<?php
-			endforeach;
 		endif;
 		$args = array(
 			'post_type' => 'product',
@@ -148,7 +153,8 @@ get_header();
 			</section>
 			<?php
 		endif;
-		?>
+	endwhile; // End of the loop.
+	?>
 
 	</main><!-- #main -->
 

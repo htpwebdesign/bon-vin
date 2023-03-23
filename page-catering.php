@@ -23,15 +23,15 @@ get_header();
 		<?php 
 			if ( function_exists ( 'get_field' ) ) {
 				?>
-				<div class="catering-description">
+				<section class="catering-description">
 				<?php
 				if ( get_field( 'catering_description' ) ) : ?>
 					<p><?php the_field( 'catering_description' ); ?></p>
 					<?php
 				endif;
 				?>
-				</div>
-				<div class="catering-packages">
+				</section>
+				<section class="catering-packages">
 				<?php
 				if ( get_field( 'packages_title' ) ) : ?>
 					<h2><?php the_field( 'packages_title' ); ?></h2>
@@ -42,25 +42,27 @@ get_header();
 				
 				if( have_rows('packages') ):
 					while( have_rows('packages') ) : the_row(); ?>
+					<div class="catering-package-individual">
 					<h3><?php the_sub_field( 'package_name' ); ?></h3>
 					<p><?php the_sub_field( 'package_description' ); ?></p>
+					</div>
 					<?php
 					endwhile;
 				endif;
 				 ?>
-				</div>
+				</section>
 				<?php
 			}
 		?>
-			<div class="catering-form">
+			<section class="catering-form">
 				<?php
 				if ( function_exists ( 'gravity_form' ) ) {
 					gravity_form( 1, false, false, false, '', false );
 				}
 				?>
-			</div>
+			</section>
 
-			<div class="catering-cta">
+			<section class="catering-cta">
 			<?php
 				if ( get_field( 'catering_cta_blurb' ) ) : ?>
 					<p><?php the_field( 'catering_cta_blurb' ); ?></p>
@@ -78,7 +80,7 @@ get_header();
 					endif;
 				endif;
 				?>
-			</div>
+			</section>
 		</div>
 		<?php
 	endwhile; // End of the loop.
