@@ -21,8 +21,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
-
 			$args = array(
 				'post_type'      => 'bon-vin-locations',
 				'posts_per_page' => -1,

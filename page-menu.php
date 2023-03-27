@@ -102,10 +102,10 @@ get_header();
 							$product_price = $product->get_price();
 							?>
 
-							<div class="menu-item">
+							<article class="menu-item">
 								<h4><?php the_title(); ?></h4>
 								<p>$<?php echo $product_price ?></p>
-							</div>
+							</article>
 
 							<?php		
 						endwhile;
@@ -142,10 +142,10 @@ get_header();
 				$product = wc_get_product($id);
 				$product_price = $product->get_price();
 				?>
-				<div class="menu-item">
+				<article class="menu-item">
 					<h4><?php the_title(); ?></h4>
 					<p>$<?php echo $product_price ?></p>
-				</div>
+				</article>
 				<?php		
 			endwhile;
 			wp_reset_postdata();
