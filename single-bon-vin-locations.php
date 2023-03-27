@@ -9,48 +9,60 @@
 
 get_header();
 ?>
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 		<?php
 			while ( have_posts() ) :
 				the_post();
+
 		?>
 		<header class="entry-header">
             <?php the_title( "<h1 class=“entry-title”>", "</h1>" ); ?>
         </header><!-- .entry-header -->
 
-		<section class='main-image-location'>
-			<?php
-				$image = get_field('single_location');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
-					if( $image ) {
-						echo wp_get_attachment_image( $image, $size );
-					}
-			?>
-			<?php
-				if ( get_field('cta') ) {
-				$link = get_field('cta');
-					if ($link) {
-						$link_title = $link['title'];
-						$link_url = $link['url']; ?>
-						<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
-						<?php
-					}
-				}
-			?>
+	<section class='main-image-location'>
+	<?php
+		$image = get_field('single_location');
+		$size = 'full'; // (thumbnail, medium, large, full or custom size)
+			if( $image ) {
+    		echo wp_get_attachment_image( $image, $size );
+			}
+	?>
+	<?php
+		if ( get_field('cta') ) {
+		$link = get_field('cta');
+			if ($link) {
+			$link_title = $link['title'];
+			$link_url = $link['url'];
+	?>
+		<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
+	<?php
+			}
+	
+}
+	?>
 
-			<?php 
-				if (get_field('map')) {
-					$location = get_field('map');
-					if( $location ): 
-						?>
-						<div class="acf-map" data-zoom="16">
-						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
-						</div>
-						<?php
-					endif;
-				}
-				?>
-			</section>
+	<?php 
+		if (get_field('map')) {
+		$location = get_field('map');
+		if( $location ): 
+		?>
+    		<div class="acf-map" data-zoom="16">
+       		<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+    	</div>
+		<?php
+		endif;
+		}
+		?>
+
+	</section>
+
+	<section class="location-description">
+	<?php
+	if ( get_field('location_description') ) {
+			the_field('location_description');
+		}
+	?>
+	</section>
 
 			<section class="location-description">
 				<?php
@@ -124,9 +136,8 @@ get_header();
 				);
 				?>
 			</section>
-			<section></section>
 
-		</div>
+
 		<?php
 		endwhile; // End of the loop.
 		?>
