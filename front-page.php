@@ -27,7 +27,7 @@ get_header();
 					<div class="logo">
 						<?php
 						$image = get_field('logo');
-						$size = 'medium';
+						$size = 'large';
 							if( $image ) {
 								echo wp_get_attachment_image( $image, $size );
 							}
@@ -96,10 +96,13 @@ get_header();
 						$custom_field = get_field( 'field_name', $featured_post->ID );
 					?>
 
-					<article><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
+					<section>
+						<!-- <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a> -->
+						<h3><?php echo esc_html( $title ); ?></h3>
 						<?php echo get_the_content( "", false, $featured_post->ID ); ?> 
 						<?php echo get_the_post_thumbnail( $featured_post->ID, 'medium',); ?>
-					</article>
+						<a href="<?php echo esc_url( $permalink ); ?>">Shop</a>
+					</section>
 						
 					<?php endforeach; ?>
 				<?php endif; ?>
