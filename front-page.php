@@ -26,8 +26,7 @@ get_header();
 					?>
 					<div class="logo">
 						<?php
-						// if (get_field('logo')): 
-						$image = get_field('single_location');
+						$image = get_field('logo');
 						$size = 'medium';
 							if( $image ) {
 								echo wp_get_attachment_image( $image, $size );
