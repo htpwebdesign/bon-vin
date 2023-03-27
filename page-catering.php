@@ -42,10 +42,10 @@ get_header();
 				
 				if( have_rows('packages') ):
 					while( have_rows('packages') ) : the_row(); ?>
-					<div class="catering-package-individual">
+					<article class="catering-package-individual">
 					<h3><?php the_sub_field( 'package_name' ); ?></h3>
 					<p><?php the_sub_field( 'package_description' ); ?></p>
-					</div>
+					</article>
 					<?php
 					endwhile;
 				endif;
