@@ -16,30 +16,28 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-		<?php
-		while ( have_posts() ) :
-			the_post();
-		?>
-				<div class="logo">
-				<?php 
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			?>
+
+			<?php 
 				if ( function_exists ( 'get_field' ) ) {
 					?>
-					<div class="logo">
+					<section class="logo">
 						<?php
-						if (get_field('logo')): ?> 
-							<img src=" <?php the_field('logo'); ?> "/>
-							<?php
-						endif;
+						$image = get_field('logo');
+						$size = 'large';
+							if( $image ) {
+								echo wp_get_attachment_image( $image, $size );
+							}
 						?>
-					</div>
-					<?php
+					</section>
+				<?php
 				}
-				?>
-				</div>
-					
+				?>	
 
-
-				<div class="shop-cta">
+				<section class="shop-cta">
 					<?php
 					if ( get_field('shop_cta') ) {
 						$link = get_field('shop_cta');
@@ -52,27 +50,27 @@ get_header();
 						}
 					}
 					?>
-				</div>
+				</section>
 
-				<div class="wine-list-title">
+				<section class="wine-list-title">
 					<?php
 					if ( get_field( 'wine_list_title' ) ) : ?>
 						<h3><?php the_field( 'wine_list_title' ); ?></h3>
 						<?php
 					endif;
 					?>
-				</div> 
+				</section> 
 
-				<div class="wine-list-description">
+				<section class="wine-list-description">
 					<?php
 						if ( get_field( 'wine_list_description' ) ) : ?>
 							<p><?php the_field( 'wine_list_description' ); ?></p>
 							<?php
 						endif;
 					?>
-				</div> 
+				</section> 
 
-				<div class="shop-all-cta">
+				<section class="shop-all-cta">
 					<?php 
 					if ( get_field('shop_cta') ) {
 						$link = get_field('shop_all_cta');
@@ -85,9 +83,9 @@ get_header();
 						}
 					}
 					?>
-				</div>
+				</section>
 
-				<div class="wine-list">
+				<section class="wine-list">
 				<?php
 				$featured_posts = get_field('wine_list');
 				if( $featured_posts ): ?>
@@ -96,20 +94,20 @@ get_header();
 						$permalink = get_permalink( $featured_post->ID );
 						$title = get_the_title( $featured_post->ID );
 						$custom_field = get_field( 'field_name', $featured_post->ID );
-						
 					?>
-							<article></article><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
-							<?php echo get_the_content( "", false, $featured_post->ID ); ?> 
-							<?php echo get_the_post_thumbnail( $featured_post->ID, 'medium',); ?>
-						</article>
+
+					<section>
+						<!-- <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a> -->
+						<h3><?php echo esc_html( $title ); ?></h3>
+						<?php echo get_the_content( "", false, $featured_post->ID ); ?> 
+						<?php echo get_the_post_thumbnail( $featured_post->ID, 'medium',); ?>
+						<a href="<?php echo esc_url( $permalink ); ?>">Shop</a>
+					</section>
 						
 					<?php endforeach; ?>
-					
 				<?php endif; ?>
+				</section>
 
-				</div>
-
-			
 			<?php
 
 		endwhile; // End of the loop.

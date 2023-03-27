@@ -22,7 +22,7 @@
 
 		<section>
 		<p><?php bloginfo( 'description' ); ?></p>
-		<p>&copy;<?php echo do_shortcode( '[year]' ); ?></p>
+		<p>&copy;<?php echo date('Y') ?></p>
 		</section>
 
 	</footer><!-- #colophon -->

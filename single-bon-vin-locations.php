@@ -93,7 +93,7 @@ get_header();
     	<?php endwhile; ?>
     		</ul>
 	<?php
-		
+		else :
   
 		endif;
 ?>

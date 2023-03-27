@@ -30,47 +30,49 @@ get_header();
 				) 
 			);
 
-	if ( $terms && ! is_wp_error( $terms ) ) {
-		foreach ( $terms as $term ) {
+			if ( $terms && ! is_wp_error( $terms ) ) {
+				foreach ( $terms as $term ) {
 
-			$args = array(
-				'post_type'      => 'bon-vin-careers',
-				'posts_per_page' => -1,
-				'order'          => 'ASC',
-				'orderby'        => 'title',
-				'tax_query'      => array(
-					array(
-						'taxonomy' => $taxonomy,
-						'field'    => 'slug',
-						'terms'    => $term->slug,
-					)
-				),
-			);
-			$query = new WP_Query ($args);
-			if ($query -> have_posts()) {
-				echo '<h2>' . esc_html( $term->name ) . '</h2>';
-				while ($query -> have_posts()) {
-					$query -> the_post();
-					?>
-					<section>
-					<?php
-					if ( function_exists( 'get_field' ) ) {
-						if ( get_field( 'job_title' ) ) {
-							?>
-							<h3><?php the_field( 'job_title' ); ?></h3>
-							<p><?php the_field('job_overview') ?></p>
-							<a href="<?php the_permalink(); ?>">Details</a>
-							<?php
+					$args = array(
+						'post_type'      => 'bon-vin-careers',
+						'posts_per_page' => -1,
+						'order'          => 'ASC',
+						'orderby'        => 'title',
+						'tax_query'      => array(
+							array(
+								'taxonomy' => $taxonomy,
+								'field'    => 'slug',
+								'terms'    => $term->slug,
+							)
+						),
+					);
+					$query = new WP_Query ($args);
+					if ($query -> have_posts()) {
+						?>
+						<section>
+						<?php
+						echo '<h2>' . esc_html( $term->name ) . '</h2>';
+						while ($query -> have_posts()) {
+							$query -> the_post();
+							if ( function_exists( 'get_field' ) ) {
+								if ( get_field( 'job_title' ) ) {
+									?>
+									<article>
+									<h3><?php the_field( 'job_title' ); ?></h3>
+									<p><?php the_field('job_overview') ?></p>
+									<a href="<?php the_permalink(); ?>">Details</a>
+									</article>
+									<?php
+								}
+							}
 						}
+						?>
+						</section>
+						<?php
 					}
-					?>
-					</section>
-					<?php
 				}
+				wp_reset_postdata();
 			}
-		}
-		wp_reset_postdata();
-	}
 
 		endwhile; // End of the loop.
 		?>
