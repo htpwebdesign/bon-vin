@@ -124,6 +124,7 @@ get_header();
 				);
 				?>
 			</section>
+			<section></section>
 
 		</div>
 		<?php
