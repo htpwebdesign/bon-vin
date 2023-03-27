@@ -24,7 +24,7 @@ get_header();
 			<?php 
 				if ( function_exists ( 'get_field' ) ) {
 					?>
-					<div class="logo">
+					<section class="logo">
 						<?php
 						$image = get_field('logo');
 						$size = 'large';
@@ -32,7 +32,7 @@ get_header();
 								echo wp_get_attachment_image( $image, $size );
 							}
 						?>
-					</div>
+					</section>
 				<?php
 				}
 				?>	
