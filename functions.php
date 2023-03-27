@@ -133,6 +133,8 @@ function bon_vin_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'bon-vin-shop-filters', get_template_directory_uri() . '/js/shop-filters.js', array(), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'bon_vin_scripts' );
 
