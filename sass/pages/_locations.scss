@@ -1,0 +1,14 @@
+.location {
+    position: relative;
+}
+
+.location-style {
+    position: absolute;
+    @include center-text;
+
+    .location-button {
+        background-color: pink;
+        padding: .2rem 1.5rem;
+    }
+}
+
