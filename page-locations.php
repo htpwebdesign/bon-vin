@@ -15,6 +15,10 @@
 get_header();
 ?>
 
+	<header>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header>
+
 	<main id="primary" class="site-main">
 
 		<?php
@@ -34,17 +38,19 @@ get_header();
 				while ( $query -> have_posts() ) {
 					$query -> the_post();
 					?>
-					<section>
+					<section class='location'>
 					<?php
 					$image = get_field('single_location');
-					$size = 'medium';
+					$size = 'large';
 					if( $image ) {
 						echo wp_get_attachment_image( $image, $size );
 					}
 					?>
 
-					<h2><?php the_title(); ?></h2>
-					<a href="<?php the_permalink(); ?>">Details</a>
+						<div class='location-style'>
+							<h2><?php the_title(); ?></h2>
+							<a href="<?php the_permalink(); ?> " class='location-button'>Details</a>
+						</div>
 					</section>
 					<?php
 				}

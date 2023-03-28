@@ -11,7 +11,20 @@
     .menu-footer-right-container ul {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+    }
+
+    @media (min-width: 500px) {
+      .menu-footer-left-container ul {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .footer-navigation {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }
