@@ -1,0 +1,30 @@
+.site {
+  .site-footer {
+    text-align: center;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-inline-start: 0;
+    }
+
+    .menu-footer-right-container ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (min-width: 500px) {
+      .menu-footer-left-container ul {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .footer-navigation {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
