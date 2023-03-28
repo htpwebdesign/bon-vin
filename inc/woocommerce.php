@@ -238,4 +238,12 @@ function bon_vin_shop_filters() {
 
 add_action(  'woocommerce_before_shop_loop', 'bon_vin_shop_filters' );
 
+function hwl_home_pagesize( $query ) {
+	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
+		$query->set( 'posts_per_page', -1 );
+		return;
+	}
+}
+add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
+
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
