@@ -1,3 +1,17 @@
+// .about-wrapper {
+//     background-color: pink;
+// }
+
 .about-wrapper {
-    background-color: pink;
+    background-color: $creme;
+
+
+    img {
+        margin: 3rem;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+    }
 }
