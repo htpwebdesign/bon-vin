@@ -101,7 +101,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "utilities/alignments";
 
-<<<<<<< Updated upstream
 .acf-map {
   width: 100%;
   height: 400px;
@@ -113,6 +112,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .acf-map img {
   max-width: inherit !important;
 }
-=======
+
+/* Alignments
+--------------------------------------------- */
+
 @import "pages/pages";
->>>>>>> Stashed changes

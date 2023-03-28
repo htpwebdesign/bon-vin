@@ -24,7 +24,7 @@ get_header();
 
 		if (function_exists('get_field')) {
 			?>
-			<section>
+			<section class='about-wrapper'>
 			<?php
 			$image = get_field('about_img');
 			$size = 'large';
