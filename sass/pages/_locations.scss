@@ -3,12 +3,29 @@
 }
 
 .location-style {
-    position: absolute;
     @include center-text;
 
     .location-button {
-        background-color: pink;
+        background-color: white;
         padding: .2rem 1.5rem;
     }
 }
 
+.acf-map {
+    width: 115%;
+    margin-left: -8%;
+}
+
+@media (min-width: 62.5em) {
+
+    .location {
+        max-width: 45%;
+    }
+
+    .locations-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .5rem;
+    }
+}
