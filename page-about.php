@@ -16,6 +16,9 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<header class="about-title">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header>
 
 	<?php
 
@@ -40,7 +43,7 @@ get_header();
 			?>
 			</section>
 
-			<nav>
+			<nav class="about-nav">
 			<?php
 
 			if ( get_field('shop_cta') ) {
