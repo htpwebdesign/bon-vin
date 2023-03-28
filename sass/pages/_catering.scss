@@ -7,6 +7,10 @@
     background-color: $green;
     color: $creme;
   }
+  .site-footer {
+    background-color: $green;
+    color: $creme;
+  }
 }
 
 .page-id-32 .button {
@@ -22,4 +26,10 @@
 }
 .catering-form .ginput_container {
   border: solid $green 3px;
+}
+
+@media (min-width: 900px) {
+  .catering-packages {
+    text-align: left;
+  }
 }
