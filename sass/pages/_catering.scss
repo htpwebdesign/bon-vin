@@ -1,0 +1,25 @@
+.page-id-32 {
+  background-color: $creme;
+  .site-main {
+    text-align: center;
+  }
+  .catering-form .button {
+    background-color: $green;
+    color: $creme;
+  }
+}
+
+.page-id-32 .button {
+  background-color: $pink;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border-radius: 10px;
+}
+.gform_footer {
+  justify-content: center;
+}
+.catering-form .ginput_container {
+  border: solid $green 3px;
+}
