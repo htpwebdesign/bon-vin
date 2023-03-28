@@ -14,8 +14,8 @@
 @mixin center-text {
 	position: absolute;
 	text-align: center;
-	top: 0;
-	bottom: 0;
-	right: 0;
+	top: 50%;
+	transform: translate(0, -50%);
 	left: 0;
+	right: 0;
 }
