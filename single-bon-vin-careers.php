@@ -16,13 +16,13 @@ get_header();
 
 		while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
+			?>
+			<h1><?php the_title() ?></h1>
+			<?php
 			if (function_exists('get_field')) {
 
 				?>
-				<section>
+				<section class="single-job-description">
 				<?php
 	
 				if (get_field('job_description')) {
@@ -31,19 +31,19 @@ get_header();
 				?>
 				</section>
 	
-				<section>
+				<section class="single-job-qualification">
 				<?php
 				if (get_field('job_qualifications')) {
 					$field = get_field_object('job_qualifications');
 					?>
 					<h2><?php echo $field['label'] ?></h2>
-					<p><?php the_field('job_qualifications'); ?></p>
+					<?php the_field('job_qualifications'); ?>
 					<?php
 				}
 				?>
 				</section>
 	
-				<section>
+				<section class="single-job-apply">
 				<?php
 				if (get_field('how_to_apply')) {
 					$field = get_field_object('how_to_apply');

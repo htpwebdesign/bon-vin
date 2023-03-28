@@ -1,0 +1,27 @@
+.single-bon-vin-careers {
+  .site-main {
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    .single-job-apply {
+      margin-bottom: 3rem;
+      a {
+        padding: 1rem 3rem;
+        background-color: pink;
+        border: 2px solid black;
+      }
+    }
+
+    @media (min-width: 780px) {
+      max-width: 700px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
