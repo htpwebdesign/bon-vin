@@ -11,6 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<div class="content-wrapper">
 
 		<?php
 
@@ -66,7 +67,7 @@ get_header();
 		endwhile; // End of the loop.
 
 		?>
-
+	</div>
 	</main><!-- #main -->
 
 <?php
