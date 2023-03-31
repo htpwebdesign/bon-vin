@@ -19,3 +19,9 @@
 	left: 0;
 	right: 0;
 }
+
+@mixin button {
+	padding: .5rem 3rem;
+	border-radius: .2rem;
+	margin-top: 2rem;
+}
