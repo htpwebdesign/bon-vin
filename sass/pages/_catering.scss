@@ -12,7 +12,7 @@
     color: $creme;
   }
   h1 {
-    text-shadow: 10px 5px 5px black;
+    text-shadow: 5px 5px black;
   }
 }
 
@@ -33,7 +33,9 @@
 }
 
 @media (min-width: 900px) {
-  .catering-packages {
-    text-align: left;
+  .page-id-32 {
+    .catering-packages {
+      text-align: left;
+    }
   }
 }
