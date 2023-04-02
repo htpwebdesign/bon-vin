@@ -21,6 +21,8 @@
   right: 0;
 }
 
-@mixin h1 {
-  box-shadow: 10px 5px 5px black;
+@mixin button {
+  padding: 0.5rem 3rem;
+  border-radius: 0.2rem;
+  margin-top: 2rem;
 }
