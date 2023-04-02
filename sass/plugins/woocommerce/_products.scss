@@ -1,30 +1,27 @@
 .woocommerce-shop .site {
   background-color: $creme;
 
+  .site-footer {
+    background-color: $soft-pink;
+  }
+
   .filter-wrapper {
-    position: relative;
-    height: 7rem;
-    display: flex;
-    align-items: end;
+    width: 80%;
+    max-width: 390px;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid black;
+    height: 3.5rem;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    .filter-dropdown {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+    }
     .filters {
-      position: absolute;
-      top: 0;
-      //   right: 0;
-      //   left: 0;
-      margin: 0 auto;
-      width: 80%;
-      display: flex;
-      flex-wrap: wrap;
-      background-color: white;
-      height: 3rem;
-      border: 2px solid black;
-      // overflow: hidden;
-
-      .filter-dropdown {
-        width: 100%;
-        margin: 0;
-      }
-
       .filter {
         background: transparent;
         border: none;
@@ -32,9 +29,16 @@
       }
     }
   }
+  .filter-wrapper.show {
+    height: 13rem;
+    .filter-dropdown {
+      border-bottom: 2px solid black;
+    }
+  }
 
   ul.products {
-    margin: 2rem 0 0;
+    margin: 2rem auto 0;
+    max-width: 829px;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -43,9 +47,10 @@
     li.product {
       list-style: none;
       position: relative;
-      margin-bottom: 2em;
+      margin: 0 0.5rem 2em;
       display: block;
       width: 40%;
+      max-width: 150px;
 
       a {
         text-decoration: none;
@@ -54,6 +59,7 @@
 
       img {
         display: block;
+        width: 100%;
       }
 
       h2 {
@@ -68,7 +74,7 @@
       }
 
       p {
-        max-height: 6.25rem;
+        height: 6.25rem;
         overflow: hidden;
         font-size: 1rem;
       }
@@ -85,36 +91,87 @@
     }
   }
 
-  @media screen and (min-width: 48em) {
+  @media (min-width: 660px) {
+    .filter-title-wrapper {
+      max-width: 829px;
+      display: block;
+      margin: 0 auto;
+      h2 {
+        text-align: left;
+        margin-left: 2rem;
+      }
+    }
+    .filter-wrapper {
+      display: flex;
+      max-width: 829px;
+    }
+    .filter-dropdown {
+      display: none;
+    }
+    .filters {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .filter-title-wrapper {
+      max-width: 1200px;
+      h2 {
+        margin-left: 1rem;
+      }
+    }
     ul.products {
+      max-width: 1200px;
       li.product {
-        @include column-width(3);
-        float: left;
-        margin-right: $columns__margin;
-
-        &.first {
-          clear: both;
-        }
-
-        &.last {
-          margin-right: 0;
-        }
-      }
-    }
-
-    ul.products.columns-1 {
-      li.product {
-        float: none;
-        width: 100%;
-      }
-    }
-
-    @for $i from 2 through 6 {
-      ul.products.columns-#{$i} {
-        li.product {
-          @include column-width($i);
+        max-width: 22%;
+        .woocommerce-LoopProduct-link {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            width: 100%;
+          }
+          h2,
+          .price {
+            margin-top: 14px;
+          }
         }
       }
     }
   }
+
+  //   @media screen and (min-width: 48em) {
+  //     ul.products {
+  //       li.product {
+  //         @include column-width(3);
+  //         float: left;
+  //         margin-right: $columns__margin;
+
+  //         &.first {
+  //           clear: both;
+  //         }
+
+  //         &.last {
+  //           margin-right: 0;
+  //         }
+  //       }
+  //     }
+
+  //     ul.products.columns-1 {
+  //       li.product {
+  //         float: none;
+  //         width: 100%;
+  //       }
+  //     }
+
+  //     @for $i from 2 through 6 {
+  //       ul.products.columns-#{$i} {
+  //         li.product {
+  //           @include column-width($i);
+  //         }
+  //       }
+  //     }
+  //   }
 }

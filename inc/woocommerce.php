@@ -228,14 +228,16 @@ if ( ! function_exists( 'bon_vin_woocommerce_header_cart' ) ) {
 
 function bon_vin_shop_filters() {
 	?>
-	<div class="filter-wrapper">
-	<div class="filters">
-		<p class="filter-dropdown">Filter</p>
-		<button class="filter" data-filter="wine">WINE</button>
-		<button class="filter" data-filter="not-wine">NOT WINE</button>
-		<button class="filter" data-filter="all">ALL</button>
-	</div>
-	<h2 class="filter-title">All</h2>
+	<div class="filter-title-wrapper">
+		<div class="filter-wrapper">
+			<button class="filter-dropdown">Filters </button>
+			<div class="filters">
+				<button class="filter" data-filter="wine">WINE</button>
+				<button class="filter" data-filter="not-wine">NOT WINE</button>
+				<button class="filter" data-filter="all">ALL</button>
+			</div>
+		</div>
+		<h2 class="filter-title">All Products</h2>
 	</div>
 	<?php
 }

@@ -18,7 +18,7 @@ filters.forEach((filter) => {
     if (selectedFilter == "all") {
       itemsToHide = [];
       itemsToShow = document.querySelectorAll(".products .product");
-      filterTitle.innerHTML = "All";
+      filterTitle.innerHTML = "All Products";
     }
 
     itemsToHide.forEach((el) => {
