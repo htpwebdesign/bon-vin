@@ -320,3 +320,9 @@ add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_arg
 	// $args['columns'] = 2; // arranged in 2 columns
 	return $args;
 }
+
+// Remove product image zoom on product page 
+function remove_image_zoom_support_webtalkhub() {
+    remove_theme_support( 'wc-product-gallery-zoom' );
+}
+add_action( 'wp', 'remove_image_zoom_support_webtalkhub', 100 );
