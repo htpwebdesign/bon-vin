@@ -1,23 +1,24 @@
 const filters = document.querySelectorAll(".filter");
+const filterTitle = document.querySelector(".filter-title");
 
 filters.forEach((filter) => {
   filter.addEventListener("click", function () {
-    // let selectedFilter = filter.getAttribute('data-filter');
-    // let itemsToHide = document.querySelectorAll(`.products .product:not([data-filter='${selectedFilter}'])`);
-    // let itemsToShow = document.querySelectorAll(`.products [data-filter='${selectedFilter}']`);
-    console.log("yup");
     let selectedFilter = filter.getAttribute("data-filter");
-    let itemsToHide = document.querySelectorAll(`.products .product:not(.product_cat-wine)`);
-    let itemsToShow = document.querySelectorAll(`.products .product.product_cat-wine`);
 
+    if (selectedFilter == "wine") {
+      itemsToHide = document.querySelectorAll(`.products .product:not(.product_cat-wine)`);
+      itemsToShow = document.querySelectorAll(`.products .product.product_cat-wine`);
+      filterTitle.innerHTML = "Wine";
+    }
     if (selectedFilter == "not-wine") {
       itemsToHide = document.querySelectorAll(`.products .product.product_cat-wine`);
       itemsToShow = document.querySelectorAll(`.products .product:not(.product_cat-wine)`);
+      filterTitle.innerHTML = "Not Wine";
     }
-
     if (selectedFilter == "all") {
       itemsToHide = [];
       itemsToShow = document.querySelectorAll(".products .product");
+      filterTitle.innerHTML = "All";
     }
 
     itemsToHide.forEach((el) => {

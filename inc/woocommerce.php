@@ -228,10 +228,14 @@ if ( ! function_exists( 'bon_vin_woocommerce_header_cart' ) ) {
 
 function bon_vin_shop_filters() {
 	?>
+	<div class="filter-wrapper">
 	<div class="filters">
-		<span class="filter" data-filter="wine">WINE</span>
-		<span class="filter" data-filter="not-wine">NOT WINE</span>
-		<span class="filter" data-filter="all">ALL</span>
+		<p class="filter-dropdown">Filter</p>
+		<button class="filter" data-filter="wine">WINE</button>
+		<button class="filter" data-filter="not-wine">NOT WINE</button>
+		<button class="filter" data-filter="all">ALL</button>
+	</div>
+	<h2 class="filter-title">All</h2>
 	</div>
 	<?php
 }
@@ -247,3 +251,12 @@ function hwl_home_pagesize( $query ) {
 add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
 
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+function short_des_product() {
+    the_excerpt();
+}
+add_action( 'woocommerce_after_shop_loop_item_title', 'short_des_product', 30 );
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
