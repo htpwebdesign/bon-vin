@@ -142,6 +142,7 @@
     img {
         width: 100vw;
         height: 100vh;
+        object-fit: cover;
 
     }
 
@@ -151,9 +152,14 @@
 .logo img {
     position: absolute;
     top: 50%;
-    width: 50%;
-    height: 50%;
+    width: 90%;
+    height: auto;
     transform: translate(10%, -50%);
+    max-width: 622px;
+
+    // width: 50%;
+    // height: 50%;
+
 }
 
 
