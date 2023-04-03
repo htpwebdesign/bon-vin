@@ -49,28 +49,30 @@ get_header();
 					$query = new WP_Query ($args);
 					if ($query -> have_posts()) {
 						?>
-						<!-- <section class="career-buttons"> -->
-						<button class="accord-button"><?php echo esc_html( $term->name );?></button>
-						<!-- </section> -->
-						<section class="careers-location">
-						<?php
 						
-						while ($query -> have_posts()) {
-							$query -> the_post();
-							if ( function_exists( 'get_field' ) ) {
-								if ( get_field( 'job_title' ) ) {
-									?>
-									<article class="career-job">
-									<h3><?php the_field( 'job_title' ); ?></h3>
-									<p><?php the_field('job_overview') ?></p>
-									<a href="<?php the_permalink(); ?>">Details</a>
-									</article>
-									<?php
+							<button class="accord-button"><?php echo esc_html( $term->name );?></button>
+						
+
+							<section class="careers-location">
+							<?php
+							
+							while ($query -> have_posts()) {
+								$query -> the_post();
+								if ( function_exists( 'get_field' ) ) {
+									if ( get_field( 'job_title' ) ) {
+										?>
+										<article class="career-job">
+										<h3><?php the_field( 'job_title' ); ?></h3>
+										<p><?php the_field('job_overview') ?></p>
+										<a href="<?php the_permalink(); ?>">Details</a>
+										</article>
+										<?php
+									}
 								}
 							}
-						}
-						?>
-						</section>
+							?>
+							</section>
+			
 						<?php
 					} else {
 						?>

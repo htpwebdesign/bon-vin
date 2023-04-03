@@ -28,11 +28,34 @@
   button {
     width: 100%;
     margin: 20px 0;
+    @include button;
   }
   .careers-location {
     background-color: $soft-pink;
+    padding-bottom: 1rem;
   }
   .site-footer {
     margin-top: 20px;
+  }
+  .careers-location a {
+    background-color: $pink;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.25rem;
+    @include button;
+  }
+}
+@media (min-width: 900px) {
+  //   button {
+  //     max-width: 60%;
+  //     display: block;
+  //     margin: 0 auto;
+  //   }
+
+  .accord-button {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
   }
 }
