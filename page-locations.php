@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<header>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title locations">', '</h1>' ); ?>
 	</header>
 
 	<main id="primary" class="site-main">

@@ -1,5 +1,11 @@
 // Locations Page
 
+.entry-title.locations {
+    color: $pink;
+    text-shadow: -4px 0px black;
+    text-transform: uppercase;
+}
+
 .page-id-36 {
     background-color: $soft-pink;
 
@@ -112,7 +118,7 @@
     background-color: $orange;
 
     p {
-        @include wrapper;
+        max-width: 90%;
         padding: 1rem;
     }
 }
@@ -120,11 +126,10 @@
 .hours-contact {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    background-color: $green;
 }
 
 .hours {
-   background-color: $green;
    padding: 1rem;
    width: 100%;
 
@@ -143,7 +148,6 @@
 }
 
 .contact-info {
-    background-color: $green;
     width: 100%;
 
     h2,
@@ -198,10 +202,6 @@
 
     .hours-contact {
         flex-direction: row;
-
-        .contact-info {
-            height: 100%;
-        }
     }
 }
 
@@ -219,6 +219,7 @@
         grid-template-columns: 1fr 1fr;
         align-items: center;
         padding: 1rem;
+        justify-items: center;
 
         .acf-map {
             grid-row: 1/2;
