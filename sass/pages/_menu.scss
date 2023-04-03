@@ -39,7 +39,10 @@
     align-items: center;
     border: .2rem solid $green;
     border-radius: 1rem;
-    margin: 1rem;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    max-width: 80%;
 
     article {
         text-align: center;
@@ -61,13 +64,21 @@
 
     #menu-wine,
     #menu-food {
-
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+        align-items: flex-start;
 
         h2 {
             width: 100%;
         }
+    }
+}
+
+@media (min-width: 50em) {
+
+    .menu-nav {
+        max-width: 50%;
+        margin: 0 auto;
     }
 }
