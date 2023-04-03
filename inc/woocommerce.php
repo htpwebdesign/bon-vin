@@ -263,7 +263,9 @@ add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
 
 // Add description for products on shop page
 function bon_vin_des_product() {
-    the_excerpt();
+	if ( is_shop() ) {
+		the_excerpt();
+	}
 }
 add_action( 'woocommerce_after_shop_loop_item_title', 'bon_vin_des_product', 30 );
 
@@ -282,7 +284,7 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 // Display title above image on product page 
 function product_change_title_position() {
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-	add_action( 'woocommerce_before_single_product', 'woocommerce_template_single_title', 5 );
+	add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5 );
 }
 add_action( 'init', 'product_change_title_position' );
 
@@ -326,3 +328,13 @@ function remove_image_zoom_support_webtalkhub() {
     remove_theme_support( 'wc-product-gallery-zoom' );
 }
 add_action( 'wp', 'remove_image_zoom_support_webtalkhub', 100 );
+
+//  Remove add to cart from individual product page
+function remove_add_to_cart_product_page() {
+if (is_product() ) {
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+}
+}
+add_action( 'wp', 'remove_add_to_cart_product_page', 10);
+
+
