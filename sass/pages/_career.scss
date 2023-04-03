@@ -16,6 +16,7 @@
   .active,
   .accord-button:hover {
     background-color: $pink;
+    cursor: pointer;
   }
 
   .careers-location {
@@ -24,8 +25,14 @@
     display: none;
     overflow: hidden;
   }
-  .career-buttons {
-    // display: flex;
-    // justify-content: center;
+  button {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .careers-location {
+    background-color: $soft-pink;
+  }
+  .site-footer {
+    margin-top: 20px;
   }
 }
