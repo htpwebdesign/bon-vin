@@ -49,9 +49,12 @@ get_header();
 					$query = new WP_Query ($args);
 					if ($query -> have_posts()) {
 						?>
+						<!-- <section class="career-buttons"> -->
+						<button class="accord-button"><?php echo esc_html( $term->name );?></button>
+						<!-- </section> -->
 						<section class="careers-location">
 						<?php
-						echo '<h2>' . esc_html( $term->name ) . '</h2>';
+						
 						while ($query -> have_posts()) {
 							$query -> the_post();
 							if ( function_exists( 'get_field' ) ) {
@@ -69,6 +72,13 @@ get_header();
 						?>
 						</section>
 						<?php
+					} else {
+						?>
+						<button class="accord-button"><?php echo esc_html( $term->name );?></button>
+						<section class="careers-location">
+							<p>No posting available for this location.</p>
+						</section>
+					<?php
 					}
 				}
 				wp_reset_postdata();
