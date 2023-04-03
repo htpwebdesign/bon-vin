@@ -17,7 +17,7 @@
     background-color: white;
     display: block;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 1px solid black;
     height: 3.5rem;
     overflow: hidden;
     transition: height 0.5s ease;
@@ -25,7 +25,7 @@
       width: 100%;
       background-color: transparent;
       border: none;
-      border-bottom: 2px solid transparent;
+      border-bottom: 1px solid transparent;
     }
     .filters {
       .filter {
@@ -38,7 +38,7 @@
   .filter-wrapper.show {
     height: 13rem;
     .filter-dropdown {
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid black;
     }
   }
 
@@ -88,8 +88,10 @@
       .button {
         display: block;
         text-align: center;
-        border: 2px solid black;
+        @include button;
+        border: 1px solid black;
         background-color: white;
+        margin: 1rem auto 0;
       }
     }
     li.product.hide {
@@ -106,17 +108,28 @@
         text-align: left;
         margin-left: 2rem;
       }
-    }
-    .filter-wrapper {
-      display: flex;
-      max-width: 829px;
-    }
-    .filter-dropdown {
-      display: none;
-    }
-    .filters {
-      display: flex;
-      width: 100%;
+
+      .filter-wrapper {
+        display: flex;
+        max-width: 829px;
+        background: transparent;
+        border: none;
+
+        .filter-dropdown {
+          display: none;
+        }
+        .filters {
+          display: flex;
+          width: 100%;
+
+          .filter {
+            @include button;
+            background-color: white;
+            margin: 0 0.5rem;
+            border: 1px solid black;
+          }
+        }
+      }
     }
   }
 
@@ -147,37 +160,4 @@
       }
     }
   }
-
-  //   @media screen and (min-width: 48em) {
-  //     ul.products {
-  //       li.product {
-  //         @include column-width(3);
-  //         float: left;
-  //         margin-right: $columns__margin;
-
-  //         &.first {
-  //           clear: both;
-  //         }
-
-  //         &.last {
-  //           margin-right: 0;
-  //         }
-  //       }
-  //     }
-
-  //     ul.products.columns-1 {
-  //       li.product {
-  //         float: none;
-  //         width: 100%;
-  //       }
-  //     }
-
-  //     @for $i from 2 through 6 {
-  //       ul.products.columns-#{$i} {
-  //         li.product {
-  //           @include column-width($i);
-  //         }
-  //       }
-  //     }
-  //   }
 }
