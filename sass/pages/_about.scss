@@ -1,3 +1,9 @@
+.page-id-34 {
+    footer {
+        background-color: $orange;
+    }
+}
+
 .about-wrapper {
     img {
         display: block;
@@ -17,7 +23,6 @@
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        margin-bottom: 5rem;
         padding: 8rem;
         background-color: $green;
         max-width: 100%;
@@ -28,9 +33,8 @@
             display: flex;
             justify-content: center;
             color: $green;
-            // border-radius: 30%;
             text-decoration: none;
-            // max-width: 50%;
+            @include button;
         }
 
     }
@@ -42,9 +46,11 @@
         flex-direction: row-reverse;
         gap: 3rem;
 
+
         img {
             max-width: 40%;
             padding-bottom: 4rem;
+
         }
 
         p {

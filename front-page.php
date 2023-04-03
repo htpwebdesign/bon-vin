@@ -20,22 +20,40 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 			?>
+			<?php
 
-			<?php 
-				if ( function_exists ( 'get_field' ) ) {
+			if ( function_exists ( 'get_field' ) ) {
+				?>
+				<section class="hero-img">
+					<?php
+					$image = get_field('hero_img');
+					$size = 'large';
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
 					?>
-					<section class="logo">
-						<?php
-						$image = get_field('logo');
-						$size = 'large';
-							if( $image ) {
-								echo wp_get_attachment_image( $image, $size );
-							}
+					<?php
+					}
+					?>
+
+					<?php
+					if ( function_exists ( 'get_field' ) ) {
 						?>
-					</section>
-				<?php
-				}
-				?>	
+						<section class="logo">
+							<?php
+							$image = get_field('logo');
+							$size = 'medium';
+								if( $image ) {
+									echo wp_get_attachment_image( $image, $size );
+								}
+							?>
+						</section>
+						<?php
+							}
+							?>
+				
+				</section>
+					
 				<section class="shop-cta">
 					<?php
 					if ( get_field('shop_cta') ) {
@@ -83,9 +101,9 @@ get_header();
 						$custom_field = get_field( 'field_name', $featured_post->ID );
 					?>
 
-					<section class="single-wine">
+					<section class='<?php echo esc_html( $title ); ?>'>
 						<!-- <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a> -->
-						<?php echo get_the_post_thumbnail( $featured_post->ID, 'medium',); ?>
+						<?php echo get_the_post_thumbnail( $featured_post->ID, 'large',); ?>
 						<div class="flexed-wine">
 							<h3><?php echo esc_html( $title ); ?></h3>
 							<p><?php echo get_the_content( "", false, $featured_post->ID ); ?> </p>
