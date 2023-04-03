@@ -21,7 +21,7 @@
 		</nav>
 
 		<section>
-		<p><?php bloginfo( 'description' ); ?></p>
+		<p class="footer-quote"><?php bloginfo( 'description' ); ?></p>
 		<p>&copy;<?php echo date('Y') ?></p>
 		</section>
 

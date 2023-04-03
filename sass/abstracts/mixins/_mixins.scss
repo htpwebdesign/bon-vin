@@ -1,28 +1,28 @@
 // Center block
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+  width: map-get($columns, $numberColumns) -
+    (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
 
 // Center text inside container
 @mixin center-text {
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	transform: translate(0, -50%);
-	left: 0;
-	right: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  right: 0;
 }
 
 @mixin button {
-	padding: .5rem 3rem;
-	border-radius: .2rem;
-	margin-top: 2rem;
-	text-decoration: none;
+  padding: 0.5rem 3rem;
+  border-radius: 0.2rem;
+  margin-top: 2rem;
 }
