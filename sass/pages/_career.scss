@@ -1,0 +1,31 @@
+.page-id-26 {
+  background-color: $creme;
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .accord-button {
+    background-color: $soft-pink;
+  }
+  .careers-location {
+    background-color: $soft-pink;
+  }
+  .site-footer {
+    background-color: $green;
+  }
+  .active,
+  .accord-button:hover {
+    background-color: $pink;
+  }
+
+  .careers-location {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+  .career-buttons {
+    // display: flex;
+    // justify-content: center;
+  }
+}
