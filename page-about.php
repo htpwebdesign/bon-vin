@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main about-main">
 	<header class="about-title">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
@@ -28,20 +28,23 @@ get_header();
 		if (function_exists('get_field')) {
 			?>
 			<section class='about-wrapper'>
-			<?php
-			$image = get_field('about_img');
-			$size = 'large';
-			if( $image ) {
-				echo wp_get_attachment_image( $image, $size );
-			}
-	
-			if ( get_field('about_description') ) {
-				?>
-				<p><?php the_field('about_description'); ?></p>
+			<div class="content-wrapper">
 				<?php
-			}
-			?>
-			</section>
+				$image = get_field('about_img');
+				$size = 'large';
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}
+		
+				if ( get_field('about_description') ) {
+					?>
+					<p><?php the_field('about_description'); ?></p>
+					<?php
+				}
+				?>
+			</div>
+				</section>
+			
 
 			<nav class="about-nav">
 			<?php
