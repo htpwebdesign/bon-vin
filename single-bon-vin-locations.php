@@ -19,7 +19,7 @@ get_header();
 	<header class="entry-header locations">
         <?php the_title( "<h1 class='entry-title locations'>", "</h1>" );
 			$image = get_field('single_location');
-			$size = 'full'; // (thumbnail, medium, large, full or custom size)
+			$size = 'full';
 				if( $image ) {
 				echo wp_get_attachment_image( $image, $size );
 				}
@@ -37,7 +37,7 @@ get_header();
 				}
 			}
 			?>
-    </header><!-- .entry-header -->
+    </header>
 
 	<section class="location-info">
 
@@ -132,10 +132,10 @@ get_header();
 	</section>
 
 	<?php
-	endwhile; // End of the loop.
+	endwhile;
 	?>
 
-</main><!-- #main -->
+</main>
 
 <?php
 
