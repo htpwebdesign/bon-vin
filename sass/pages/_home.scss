@@ -1,0 +1,160 @@
+.page-id-38 {
+
+    footer {
+        background-color: $orange;
+    }
+
+    .site-main {
+        .shop-cta {
+            display: flex;
+            justify-content: center;
+
+            padding: 5rem;
+            background-color: $green;
+
+            a {
+                padding: 1rem 4rem 1rem 4rem;
+                background-color: $pink;
+                text-decoration: none;
+                color: $green;
+                border-radius: 5%;
+                border-bottom: $orange .4rem solid;
+                border-right: $orange .3rem solid;
+                border-top: white .4rem solid;
+                border-left: white .3rem solid;
+            }
+        }
+
+
+    }
+
+    .shop-all-cta {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+
+        a {
+            background-color: $pink;
+            text-decoration: none;
+            color: $creme;
+            @include button;
+            text-align: center;
+
+        }
+    }
+
+
+    .single-wine {
+
+        a {
+            display: flex;
+            // justify-content: center;
+            padding: 1rem;
+        }
+
+        img {
+            display: flex;
+        }
+
+
+
+        p {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: .7rem;
+        }
+
+    }
+
+    .wine-list {
+        gap: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+        text-align: center;
+
+        a {
+            background-color: $creme;
+            text-decoration: none;
+            color: $green;
+            @include button;
+            text-align: center;
+
+        }
+    }
+
+
+}
+
+.House.Red {
+    background-color: $orange;
+    padding: 2rem;
+
+    img {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    a {
+        background-color: $pink;
+        color: $creme;
+    }
+}
+
+
+.House.White {
+    background-color: $pink;
+    padding: 2rem;
+
+    img {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    a {
+        background-color: $green;
+        color: $creme;
+    }
+}
+
+.House.Rosé {
+    background-color: $green;
+    color: $creme;
+    padding: 2rem;
+
+    img {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    a {
+        background-color: $orange;
+        color: $creme;
+
+    }
+}
+
+
+.hero-img {
+    position: relative;
+
+    img {
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+
+}
+
+.logo img {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(10%, -50%);
+}
+
+
+@media screen and (min-width: 57.18em) {}
