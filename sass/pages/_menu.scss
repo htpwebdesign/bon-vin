@@ -1,0 +1,73 @@
+.page-id-21 {
+    background-color: $creme;
+}
+
+.entry-header.menu {
+    padding-bottom: 2rem;
+}
+
+.entry-title.menu {
+    color: $pink;
+    text-shadow: -4px 0px black;
+    text-transform: uppercase;
+}
+
+.menu-nav {
+
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+        list-style: none;
+
+        a {
+            @include button;
+            text-decoration: none;
+            color: black;
+            border: .1rem solid black;
+            border-radius: 0;
+        }
+    }
+}
+
+#menu-wine,
+#menu-food {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: .2rem solid $green;
+    border-radius: 1rem;
+    margin: 1rem;
+
+    article {
+        text-align: center;
+    }
+}
+
+#menu-food {
+    margin-bottom: 5rem;
+}
+
+.page-id-21 {
+
+    footer {
+        background-color: $pink;
+    }
+}
+
+@media (min-width: 37.5em) {
+
+    #menu-wine,
+    #menu-food {
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        h2 {
+            width: 100%;
+        }
+    }
+}

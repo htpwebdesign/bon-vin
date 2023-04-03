@@ -20,16 +20,16 @@ get_header();
 	while ( have_posts() ) :
 		the_post(); ?>
 
-		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<header class="entry-header menu">
+			<?php the_title( '<h1 class="entry-title menu">', '</h1>' ); ?>
 		
-			<nav class="menu-nav">
-				<ul>
-				<li><a href="#menu-wine">Wine</a></li>
-				<li><a href="#menu-food">Food</a></li>
+			<nav>
+				<ul class="menu-nav">
+					<li><a href="#menu-wine">Wine</a></li>
+					<li><a href="#menu-food">Food</a></li>
 				</ul>
 			</nav>
-		</header><!-- .entry-header -->
+		</header>
 
 		<?php
 		$ids = array();
@@ -134,22 +134,22 @@ get_header();
 		if ( $query -> have_posts() ) :
 			?>
 			<section class="menu" id="menu-food">
-			<h2>Food</h2>
-			<?php
-			while ( $query -> have_posts() ) :
-				$query -> the_post();
-				$id = get_the_ID();
-				$product = wc_get_product($id);
-				$product_price = $product->get_price();
+				<h2>Food</h2>
+				<?php
+				while ( $query -> have_posts() ) :
+					$query -> the_post();
+					$id = get_the_ID();
+					$product = wc_get_product($id);
+					$product_price = $product->get_price();
+					?>
+					<article class="menu-item">
+						<h4><?php the_title(); ?></h4>
+						<p>$<?php echo $product_price ?></p>
+					</article>
+					<?php		
+				endwhile;
+				wp_reset_postdata();
 				?>
-				<article class="menu-item">
-					<h4><?php the_title(); ?></h4>
-					<p>$<?php echo $product_price ?></p>
-				</article>
-				<?php		
-			endwhile;
-			wp_reset_postdata();
-			?>
 			</section>
 			<?php
 		endif;
