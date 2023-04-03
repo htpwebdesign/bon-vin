@@ -122,7 +122,6 @@ get_header();
 				<?php
 		endif;
 
-
 		// FOOD
 
 		$ids = array();
