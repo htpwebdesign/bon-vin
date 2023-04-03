@@ -16,6 +16,7 @@
   .active,
   .accord-button:hover {
     background-color: $pink;
+    cursor: pointer;
   }
 
   .careers-location {
@@ -24,8 +25,38 @@
     display: none;
     overflow: hidden;
   }
-  .career-buttons {
-    // display: flex;
-    // justify-content: center;
+  button {
+    width: 100%;
+    margin: 20px 0;
+    @include button;
+  }
+  .careers-location {
+    background-color: $soft-pink;
+    padding-bottom: 1rem;
+  }
+  .site-footer {
+    margin-top: 20px;
+  }
+  .careers-location a {
+    background-color: $pink;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.25rem;
+    @include button;
+  }
+}
+@media (min-width: 900px) {
+  //   button {
+  //     max-width: 60%;
+  //     display: block;
+  //     margin: 0 auto;
+  //   }
+
+  .page-id-26 .accord-button {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 50%;
   }
 }
