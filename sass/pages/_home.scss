@@ -1,0 +1,82 @@
+.site-main {
+    .shop-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        padding: 5rem;
+        background-color: $green;
+
+        a {
+            padding: 1rem 4rem 1rem 4rem;
+            background-color: $pink;
+            text-decoration: none;
+            color: $green;
+            border-radius: 5%;
+            border-bottom: $orange .4rem solid;
+            border-right: $orange .3rem solid;
+            border-top: white .4rem solid;
+            border-left: white .3rem solid;
+        }
+    }
+}
+
+.shop-all-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 5rem;
+    background-color: $creme;
+
+    a {
+        padding: 2rem;
+        background-color: $pink;
+        text-decoration: none;
+        color: $creme;
+    }
+}
+
+
+.single-wine {
+    background-color: $pink;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    text-align: center;
+
+    a {
+        display: flex;
+        justify-content: center;
+        // background-color: blue;
+        padding: 1rem;
+    }
+
+    img {
+        display: flex
+    }
+
+    ;
+
+    p {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: .7rem;
+    }
+
+}
+
+@media screen and (min-width: 57.18em) {
+    .single-wine {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 2fr 2fr;
+
+        a {
+            display: flex;
+            justify-content: end;
+        }
+
+
+    }
+}

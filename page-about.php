@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main about-main content-wrapper">
 	<header class="about-title">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>

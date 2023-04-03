@@ -1,28 +1,42 @@
-.about-title {
-    // display: flex;
-    // justify-content: center;
-    text-align: center;
-}
-
-.about-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 5rem;
-
-    a {
-        // padding: .5rem;
-        background-color: $pink;
-        display: flex;
-        justify-content: center;
-        color: $green;
-        // border-radius: 30%;
-        text-decoration: none;
+.about-wrapper {
+    img {
+        display: block;
+        align-items: center;
     }
 }
 
-@media (min-width: 50.87em) {
+.content-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.about-main {
+    .about-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 5rem;
+        padding: 8rem;
+        background-color: $green;
+        max-width: 100%;
+
+        a {
+
+            background-color: $soft-pink;
+            display: flex;
+            justify-content: center;
+            color: $green;
+            // border-radius: 30%;
+            text-decoration: none;
+            // max-width: 50%;
+        }
+
+    }
+}
+
+@media (min-width: 63em) {
     .about-wrapper {
         display: flex;
         flex-direction: row-reverse;
@@ -30,6 +44,7 @@
 
         img {
             max-width: 40%;
+            padding-bottom: 4rem;
         }
 
         p {
@@ -38,9 +53,65 @@
 
         }
     }
-
-
-    .about-nav {
-        margin-top: 4rem;
-    }
 }
+
+
+
+
+// .about-main {
+//     background-color: $creme;
+
+//     .site-footer {
+//         background-color: $orange;
+//     }
+// }
+
+// .about-title {
+//     // display: flex;
+//     // justify-content: center;
+//     text-align: center;
+// }
+
+// .about-nav {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     gap: 1rem;
+//     margin-bottom: 5rem;
+//     padding: 8rem;
+//     background-color: $green;
+
+//     a {
+
+//         background-color: $soft-pink;
+//         display: flex;
+//         justify-content: center;
+//         color: $green;
+//         // border-radius: 30%;
+//         text-decoration: none;
+//         // max-width: 50%;
+//     }
+// }
+
+// @media (min-width: 50.87em) {
+//     .about-wrapper {
+//         display: flex;
+//         flex-direction: row-reverse;
+//         gap: 3rem;
+
+//         img {
+//             max-width: 40%;
+//         }
+
+//         p {
+//             padding: 2rem;
+//             padding-top: 7rem;
+
+//         }
+//     }
+
+
+//     .about-nav {
+//         margin-top: 4rem;
+//     }
+// }
