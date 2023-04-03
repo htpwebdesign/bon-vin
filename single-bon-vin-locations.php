@@ -13,35 +13,34 @@ get_header();
 		<?php
 			while ( have_posts() ) :
 				the_post();
-
 		?>
-		<header class="entry-header">
-            <?php the_title( "<h1 class='entry-title'>", "</h1>" ); ?>
+
+		<header class="entry-header locations">
+            <?php the_title( "<h1 class='entry-title locations'>", "</h1>" );
+			$image = get_field('single_location');
+			$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+				}
+			?>
+
+			<?php
+			if ( get_field('cta') ) {
+			$link = get_field('cta');
+				if ($link) {
+				$link_title = $link['title'];
+				$link_url = $link['url'];
+			?>
+			<a href="<?php echo esc_url( $link_url ); ?>" class='locations-menu-btn'><?php echo $link_title; ?></a>
+			<?php
+				}
+			}
+			?>
         </header><!-- .entry-header -->
 
 	<section class='main-image-location'>
-	<?php
-		$image = get_field('single_location');
-		$size = 'full'; // (thumbnail, medium, large, full or custom size)
-			if( $image ) {
-    		echo wp_get_attachment_image( $image, $size );
-			}
-	?>
-	<?php
-		if ( get_field('cta') ) {
-		$link = get_field('cta');
-			if ($link) {
-			$link_title = $link['title'];
-			$link_url = $link['url'];
-	?>
-		<a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_title; ?></a>
-	<?php
-			}
-	
-}
-	?>
 
-	<?php 
+		<?php 
 		if (get_field('map')) {
 		$location = get_field('map');
 		if( $location ): 
@@ -124,17 +123,6 @@ get_header();
 						<?php 	
 						endif;
 					endif; ?>
-			</section>
-
-			<section>
-				<?php
-				the_post_navigation(
-					array(
-						'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'bon-vin' ) . '</span> <span class="nav-title">%title</span>',
-						'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'bon-vin' ) . '</span> <span class="nav-title">%title</span>',
-					)
-				);
-				?>
 			</section>
 
 
