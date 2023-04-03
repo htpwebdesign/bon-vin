@@ -29,7 +29,6 @@
 
     // Center map based on markers.
     centerMap(map);
-    console.log("test");
     // Return map instance.
     return map;
   }
@@ -47,7 +46,6 @@
    * @return  object The marker instance.
    */
   function initMarker($marker, map) {
-    console.log("test2 :)");
     // Get position from marker.
     var lat = $marker.data("lat");
     var lng = $marker.data("lng");
