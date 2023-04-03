@@ -26,3 +26,8 @@
   border-radius: 0.2rem;
   margin-top: 2rem;
 }
+
+@mixin wrapper {
+	max-width: 90%;
+	margin: 0 auto;
+}

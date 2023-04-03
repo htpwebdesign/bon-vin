@@ -1,0 +1,79 @@
+.page-id-14 {
+  background-color: $creme;
+  a {
+    color: $pink;
+  }
+  .woocommerce-info {
+    background-color: $green;
+    width: 60%;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0 auto;
+    color: $pink;
+    text-align: center;
+  }
+
+  .checkout_coupon {
+    align-content: center;
+    margin-left: 20px;
+    text-align: left;
+  }
+  .woocommerce-billing-fields__field-wrapper {
+    margin-left: 20px;
+    padding: 20px;
+    border: $orange 2px solid;
+    border-radius: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .woocommerce-additional-fields__field-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .woocommerce-checkout-review-order-table {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: solid $orange 1px;
+    border-radius: 20px;
+    width: 70%;
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+
+  .woocommerce-notice {
+    list-style: none;
+    margin: 0 auto;
+    align-content: center;
+  }
+  ul {
+    margin-left: -40px;
+    margin-top: 20px;
+    font-size: 1.25rem;
+  }
+  input {
+    border: $green 2px solid;
+  }
+  .woocommerce-privacy-policy-text {
+    text-align: center;
+    border: solid $orange 1px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  button {
+    background-color: $pink;
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .page-id-14 {
+    .woocommerce-billing-fields {
+      text-align: left;
+    }
+  }
+}

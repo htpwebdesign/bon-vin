@@ -20,18 +20,20 @@ get_header();
 	while ( have_posts() ) :
 		the_post(); ?>
 
-		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<header class="entry-header menu">
+			<?php the_title( '<h1 class="entry-title menu">', '</h1>' ); ?>
 		
-			<nav class="menu-nav">
-				<ul>
-				<li><a href="#menu-wine">Wine</a></li>
-				<li><a href="#menu-food">Food</a></li>
+			<nav>
+				<ul class="menu-nav">
+					<li><a href="#menu-wine">Wine</a></li>
+					<li><a href="#menu-food">Food</a></li>
 				</ul>
 			</nav>
-		</header><!-- .entry-header -->
+		</header>
 
 		<?php
+		// WINE
+
 		$ids = array();
 		$args = array(
 			'post_type' => 'product',
@@ -119,40 +121,97 @@ get_header();
 				</section>
 				<?php
 		endif;
+
+
+		// FOOD
+
+		$ids = array();
 		$args = array(
 			'post_type' => 'product',
 			'posts_per_page' => -1,
-			'tax_query'      => array(
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'bon-vin-menu-items',
+					'field'    => 'slug',
+					'terms'    => 'food'
+				)
+			)	
+		);
+		$query = new WP_QUERY( $args );
+				if ( $query -> have_posts() ) :
+					while ( $query -> have_posts() ) :
+						$query -> the_post();
+						$terms = get_the_terms(get_the_ID(), 'product_cat');
+						foreach ($terms as $term ) {
+							if ( $term->parent > 0 ) {
+								$ids[] = $term->term_id;
+							}
+						}
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				
+		$term_id = 41;
+		$taxonomy_name = 'product_cat';
+		$termchildren = get_term_children( $term_id, $taxonomy_name );
+		if ( $termchildren  ) : ?>
+
+		<section class="menu" id="menu-food">
+		<h2>Food</h2>
+		<?php
+
+foreach ( $termchildren as $term ) : 
+	$term_name = get_term( $term )->name;
+	if (in_array($term, $ids)) : ?>
+
+		<section class="menu-sub-section">
+		<h3><?php echo $term_name ?></h3>
+
+		<?php
+		$args = array(
+			'post_type' => 'product',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				'relation'	   => 'AND',
 				array(
 					'taxonomy' => 'bon-vin-menu-items',
 					'field'    => 'slug',
 					'terms'    => 'food'
 				),
-			)
+				array(
+					'taxonomy' => 'product_cat',
+					'field' => 'slug',
+					'terms' => $term_name							
+				)
+			)	
 		);
 		$query = new WP_QUERY( $args );
 		if ( $query -> have_posts() ) :
-			?>
-			<section class="menu" id="menu-food">
-			<h2>Food</h2>
-			<?php
 			while ( $query -> have_posts() ) :
 				$query -> the_post();
 				$id = get_the_ID();
+				
 				$product = wc_get_product($id);
 				$product_price = $product->get_price();
 				?>
+
 				<article class="menu-item">
 					<h4><?php the_title(); ?></h4>
 					<p>$<?php echo $product_price ?></p>
 				</article>
+
 				<?php		
 			endwhile;
 			wp_reset_postdata();
-			?>
-			</section>
-			<?php
-		endif;
+		endif; ?>
+		</section>
+		<?php
+	endif;
+endforeach;
+?>
+	</section>
+	<?php
+endif;
 	endwhile; // End of the loop.
 	?>
 
