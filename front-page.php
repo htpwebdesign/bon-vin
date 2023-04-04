@@ -42,7 +42,7 @@ get_header();
 						<section class="logo">
 							<?php
 							$image = get_field('logo');
-							$size = 'medium';
+							$size = 'full';
 								if( $image ) {
 									echo wp_get_attachment_image( $image, $size );
 								}
