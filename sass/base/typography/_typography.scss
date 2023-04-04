@@ -5,8 +5,9 @@ select,
 optgroup,
 textarea {
   color: $color__text-main;
-  font-family: $font__main;
-  font-size: 1.5rem;
+  font-family: $subheader_paragraph;
+  font-weight: $paragraph_weight;
+  font-size: 1rem;
   line-height: $font__line-height-body;
 }
 
