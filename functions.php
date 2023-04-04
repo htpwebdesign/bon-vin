@@ -136,10 +136,14 @@ function bon_vin_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	if (is_shop()){
 	wp_enqueue_script( 'bon-vin-shop-filters', get_template_directory_uri() . '/js/shop-filters.js', array(), _S_VERSION, true );
-
 	wp_enqueue_script( 'bon-vin-shop-filters-dropdown', get_template_directory_uri() . '/js/shop-filters-dropdown.js', array(), _S_VERSION, true );
+	}
+
+	if(is_page(26)){
 	wp_enqueue_script( 'bon-vin-accordion', get_template_directory_uri() . '/js/accordion.js', array(), _S_VERSION, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bon_vin_scripts' );
 
