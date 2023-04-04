@@ -41,8 +41,8 @@ body {
 				width: 200px;
 			}
 
-			:hover>a,
-			.focus>a {}
+			// :hover>a,
+			// .focus>a {}
 
 			a li:hover,
 			a li.focus {
@@ -58,8 +58,8 @@ body {
 		li {
 			position: relative;
 
-			&:hover>a,
-			&.focus>a {}
+			// &:hover>a,
+			// &.focus>a {}
 		}
 
 		a {
@@ -67,15 +67,16 @@ body {
 			text-decoration: none;
 		}
 
-		.current_page_item>a,
-		.current-menu-item>a,
-		.current_page_ancestor>a,
-		.current-menu-ancestor>a {}
+		// 	.current_page_item>a,
+		// 	.current-menu-item>a,
+		// 	.current_page_ancestor>a,
+		// 	.current-menu-ancestor>a {}
+		// }
 	}
 
 	/* Small menu. */
 	.menu-toggle,
-	.main-navigation.toggled ul {
+	&.toggled ul {
 		display: block;
 	}
 
