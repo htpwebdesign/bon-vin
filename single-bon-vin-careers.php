@@ -12,7 +12,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<div class="content-wrapper">
-
+		<section class="single-job-description">
 		<?php
 
 		while ( have_posts() ) :
@@ -23,7 +23,7 @@ get_header();
 			if (function_exists('get_field')) {
 
 				?>
-				<section class="single-job-description">
+				
 				<?php
 	
 				if (get_field('job_description')) {
