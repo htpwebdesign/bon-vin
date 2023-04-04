@@ -39,7 +39,7 @@ get_header();
 					<?php
 					if ( function_exists ( 'get_field' ) ) {
 						?>
-						<section class="logo">
+						<div class="logo">
 							<?php
 							$image = get_field('logo');
 							$size = 'full';
@@ -47,14 +47,14 @@ get_header();
 									echo wp_get_attachment_image( $image, $size );
 								}
 							?>
-						</section>
+						</div>
 						<?php
 							}
 							?>
 				
 				</section>
 					
-				<section class="shop-cta">
+				<nav class="shop-cta">
 					<?php
 					if ( get_field('shop_cta') ) {
 						$link = get_field('shop_cta');
@@ -67,26 +67,26 @@ get_header();
 						}
 					}
 					?>
-				</section>
+				</nav>
 				<div class= "content-wrapper">	
 
-				<section class="wine-list-title">
+				<div class="wine-list-title">
 					<?php
 					if ( get_field( 'wine_list_title' ) ) : ?>
 						<h3><?php the_field( 'wine_list_title' ); ?></h3>
 						<?php
 					endif;
 					?>
-				</section> 
+				</div> 
 
-				<section class="wine-list-description">
+				<div class="wine-list-description">
 					<?php
 						if ( get_field( 'wine_list_description' ) ) : ?>
 							<p><?php the_field( 'wine_list_description' ); ?></p>
 							<?php
 						endif;
 					?>
-				</section> 
+				</div> 
 
 				</div>
 
@@ -101,7 +101,7 @@ get_header();
 						$custom_field = get_field( 'field_name', $featured_post->ID );
 					?>
 
-					<section class='<?php echo esc_html( $title ); ?>'>
+					<div class='<?php echo esc_html( $title ); ?>'>
 						<!-- <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a> -->
 						<?php echo get_the_post_thumbnail( $featured_post->ID, 'large',); ?>
 						<div class="flexed-wine">
@@ -111,12 +111,12 @@ get_header();
 						</div>
 						
 						
-					</section>
+					</div>
 						
 					<?php endforeach; ?>
 				<?php endif; ?>
 				</section>
-				<section class="shop-all-cta">
+				<div class="shop-all-cta">
 					<?php 
 					if ( get_field('shop_cta') ) {
 						$link = get_field('shop_all_cta');
@@ -129,7 +129,7 @@ get_header();
 						}
 					}
 					?>
-				</section>
+				</div>
 				
 
 			<?php
