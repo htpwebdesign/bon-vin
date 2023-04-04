@@ -1,95 +1,107 @@
 .page-id-21 {
-    background-color: $creme;
+  background-color: $creme;
+  .site-footer {
+    background-color: $pink;
+  }
 }
 
 .entry-header.menu {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .entry-title.menu {
-    color: $pink;
-    text-shadow: -4px 0px black;
-    text-transform: uppercase;
+  color: $pink;
+  text-shadow: -4px 0px black;
+  text-transform: uppercase;
 }
 
 .menu-nav {
+  margin: 0;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-around;
 
-    margin: 0;
-    padding-left: 0;
-    display: flex;
-    justify-content: space-around;
+  li {
+    list-style: none;
 
-    li {
-        list-style: none;
-
-        a {
-            @include button;
-            text-decoration: none;
-            color: black;
-            border: .1rem solid black;
-            border-radius: 0;
-            font-size: 1rem;
-            box-shadow: 3px 2px $pink;
-        }
+    a {
+      @include button;
+      text-decoration: none;
+      color: black;
+      border: 0.1rem solid black;
+      border-radius: 0;
+      font-size: 1rem;
+      box-shadow: 3px 2px $pink;
     }
+  }
 }
 
 #menu-wine,
 #menu-food {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: .2rem solid $green;
-    border-radius: 1rem;
-    max-width: 80%;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.2rem solid $green;
+  border-radius: 1rem;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  .menu-style {
+    width: 50%;
+  }
     padding-bottom: 3rem;
 
-    article {
-        text-align: center;
+  article {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-item {
+    margin-bottom: 1rem;
+    h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0;
     }
 
-    h2 {
-        font-size: 1.7rem;
+    p {
+      font-size: 1rem;
+      margin: 0;
     }
-
-    h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .menu-item {
-
-        h4 {
-            font-size: 1.3rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-    }
+  }
 }
 
-
 @media (min-width: 53.125em) {
-
-    .menu-style {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        justify-items: center;
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            h4,
-            p {
-                margin: 1rem;
-            }
-        }
+  .menu-style {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+    .menu-sub-section {
+      width: 100%;
     }
+    .menu-item {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      h4,
+      p {
+        margin: 1rem;
+      }
+    }
+  }
 }
