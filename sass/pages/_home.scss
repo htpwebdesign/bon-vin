@@ -1,5 +1,12 @@
 .page-id-38 {
 
+    .content-wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
     .wine-list {
         width: 100%;
     }
@@ -212,6 +219,10 @@
         .House.House.Rosé {
             padding: 5rem;
 
+        }
+
+        .flexed-wine {
+            padding-top: 2rem;
         }
     }
 
