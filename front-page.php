@@ -67,7 +67,7 @@ get_header();
 						}
 					}
 					?>
-				</section>
+				</nav>
 				
 
 				<section class="wine-list-title">
