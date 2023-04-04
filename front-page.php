@@ -68,7 +68,7 @@ get_header();
 					}
 					?>
 				</section>
-				<div class= "content-wrapper">	
+				
 
 				<section class="wine-list-title">
 					<?php
@@ -87,8 +87,6 @@ get_header();
 						endif;
 					?>
 				</section> 
-
-				</div>
 
 				<section class="wine-list">
 				<?php
