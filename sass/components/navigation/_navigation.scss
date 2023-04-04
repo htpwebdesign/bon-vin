@@ -1,142 +1,160 @@
 body {
-	background-color: $creme;
+  background-color: $creme;
 }
-
-
-
 .main-navigation {
-	display: block;
-	width: 100%;
-	background-color: $creme;
+  display: block;
+  width: 100%;
+  background-color: $creme;
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    height: 50vh;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
+      ul {
+        left: -999em;
+        top: 0;
+      }
 
-			li {
+      li {
+        &:hover > ul,
+        &.focus > ul {
+          display: block;
+          left: auto;
+        }
+      }
 
-				&:hover>ul,
-				&.focus>ul {
-					display: block;
-					left: auto;
-				}
-			}
+      a {
+        width: 200px;
+      }
 
-			a {
-				width: 200px;
-			}
+      // :hover>a,
+      // .focus>a {}
 
-			// :hover>a,
-			// .focus>a {}
+      a li:hover,
+      a li.focus {
+        color: $pink;
+      }
 
-			a li:hover,
-			a li.focus {
-				color: $pink;
-			}
+      li:hover > ul,
+      li.focus > ul {
+        left: auto;
+      }
+    }
 
-			li:hover>ul,
-			li.focus>ul {
-				left: auto;
-			}
-		}
+    li {
+      position: relative;
+      width: 100%;
+      // &:hover>a,
+      // &.focus>a {}
+    }
 
-		li {
-			position: relative;
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.5rem;
 
-			// &:hover>a,
-			// &.focus>a {}
-		}
+      color: black;
+      text-align: center;
+    }
 
-		a {
-			display: block;
-			text-decoration: none;
-		}
+    // 	.current_page_item>a,
+    // 	.current-menu-item>a,
+    // 	.current_page_ancestor>a,
+    // 	.current-menu-ancestor>a {}
+    // }
+  }
 
-		// 	.current_page_item>a,
-		// 	.current-menu-item>a,
-		// 	.current_page_ancestor>a,
-		// 	.current-menu-ancestor>a {}
-		// }
-	}
+  /* Small menu. */
+  .menu-toggle,
+  &.toggled ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $creme;
+    border: 2px solid $orange;
+    z-index: 500;
+    svg {
+      width: 2rem;
+    }
+  }
 
-	/* Small menu. */
-	.menu-toggle,
-	&.toggled ul {
-		display: block;
-	}
+  .nav-menu {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    // bottom: -20px;
+    z-index: 900;
+  }
 
-	.nav-menu {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0px;
-		z-index: 900;
+  @media screen and (min-width: 37.5em) {
+    .menu-toggle {
+      display: none;
+    }
+    .nav-menu {
+      position: relative;
+    }
 
-	}
+    ul {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: $subheader_weight;
+      color: black;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: end;
+      margin-top: 2rem;
+      max-width: 95%;
+      position: relative;
+      height: auto;
 
-	@media screen and (min-width: 37.5em) {
+      li {
+        width: auto;
+      }
 
-		.menu-toggle {
-			display: none;
-		}
+      :hover {
+        color: $orange;
+        text-decoration: underline solid;
+      }
 
-		ul {
-			font-size: 1.5rem;
-			text-transform: uppercase;
-			font-weight: $subheader_weight;
-			color: black;
-			display: flex;
-			gap: 1.5rem;
-			justify-content: end;
-			margin-top: 2rem;
-			max-width: 95%;
-			position: relative;
+      a {
+        color: black;
+        font-size: 1rem;
+      }
+    }
+  }
 
-			:hover {
-				color: $orange;
-				text-decoration: underline solid;
-			}
+  .comment-navigation,
+  .posts-navigation,
+  .post-navigation {
+    .site-main & {
+      margin: 0 0 1.5em;
+    }
 
-			a {
-				color: black;
-			}
-		}
-	}
+    .nav-links {
+      display: flex;
+    }
 
-	.comment-navigation,
-	.posts-navigation,
-	.post-navigation {
+    .nav-previous {
+      flex: 1 0 50%;
+    }
 
-		.site-main & {
-			margin: 0 0 1.5em;
-		}
-
-		.nav-links {
-			display: flex;
-		}
-
-		.nav-previous {
-			flex: 1 0 50%;
-		}
-
-		.nav-next {
-			text-align: end;
-			flex: 1 0 50%;
-		}
-	}
+    .nav-next {
+      text-align: end;
+      flex: 1 0 50%;
+    }
+  }
 }
