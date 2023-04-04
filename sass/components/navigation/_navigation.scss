@@ -2,6 +2,8 @@ body {
 	background-color: $creme;
 }
 
+
+
 .main-navigation {
 	display: block;
 	width: 100%;
@@ -42,80 +44,99 @@ body {
 			:hover>a,
 			.focus>a {}
 
-			a:hover,
-			a.focus {}
+			a li:hover,
+			a li.focus {
+				color: $pink;
+			}
+
+			li:hover>ul,
+			li.focus>ul {
+				left: auto;
+			}
 		}
 
-		li:hover>ul,
-		li.focus>ul {
-			left: auto;
+		li {
+			position: relative;
+
+			&:hover>a,
+			&.focus>a {}
 		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover>a,
-		&.focus>a {}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item>a,
-	.current-menu-item>a,
-	.current_page_ancestor>a,
-	.current-menu-ancestor>a {}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		font-size: 1.3rem;
-		color: black;
-		display: flex;
-		gap: 1.5rem;
-		justify-content: end;
-		margin-top: 2rem;
-		// margin-right: 1.5rem;
-		max-width: 95%;
 
 		a {
+			display: block;
+			text-decoration: none;
+		}
+
+		.current_page_item>a,
+		.current-menu-item>a,
+		.current_page_ancestor>a,
+		.current-menu-ancestor>a {}
+	}
+
+	/* Small menu. */
+	.menu-toggle,
+	.main-navigation.toggled ul {
+		display: block;
+	}
+
+	.nav-menu {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0px;
+		z-index: 900;
+
+	}
+
+	@media screen and (min-width: 37.5em) {
+
+		.menu-toggle {
+			display: none;
+		}
+
+		ul {
+			font-size: 1.3rem;
+			text-transform: uppercase;
+			font-weight: 500;
 			color: black;
+			display: flex;
+			gap: 1.5rem;
+			justify-content: end;
+			margin-top: 2rem;
+			// margin-right: 1.5rem;
+			max-width: 95%;
+			position: relative;
+
+			:hover {
+				color: $orange;
+				text-decoration: underline solid;
+			}
+
+			a {
+				color: black;
+			}
 		}
 	}
-}
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
 
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
+		.site-main & {
+			margin: 0 0 1.5em;
+		}
 
-	.nav-links {
-		display: flex;
-	}
+		.nav-links {
+			display: flex;
+		}
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
+		.nav-previous {
+			flex: 1 0 50%;
+		}
 
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
+		.nav-next {
+			text-align: end;
+			flex: 1 0 50%;
+		}
 	}
 }

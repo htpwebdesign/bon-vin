@@ -39,6 +39,7 @@
             color: $creme;
             @include button;
             text-align: center;
+            box-shadow: 3px 2px black;
 
         }
     }
@@ -98,7 +99,8 @@
 
     a {
         background-color: $pink;
-        color: $creme;
+        color: black;
+        box-shadow: 2px 2px white;
     }
 }
 
@@ -106,6 +108,7 @@
 .House.White {
     background-color: $pink;
     padding: 2rem;
+
 
     img {
         border-radius: 20px;
@@ -115,6 +118,11 @@
     a {
         background-color: $green;
         color: $creme;
+        box-shadow: 2px 2px white;
+
+        :hover {
+            background-color: $green;
+        }
     }
 }
 
@@ -130,7 +138,8 @@
 
     a {
         background-color: $orange;
-        color: $creme;
+        color: black;
+        box-shadow: 2px 2px white;
 
     }
 }
@@ -142,6 +151,7 @@
     img {
         width: 100vw;
         height: 100vh;
+        object-fit: cover;
 
     }
 
@@ -151,10 +161,20 @@
 .logo img {
     position: absolute;
     top: 50%;
-    width: 50%;
-    height: 50%;
-    transform: translate(10%, -50%);
+    width: 90%;
+    height: auto;
+    transform: translate(5%, -50%);
+    max-width: 622px;
+
+    // width: 50%;
+    // height: 50%;
+
 }
 
 
-@media screen and (min-width: 57.18em) {}
+@media screen and (min-width: 56.25em) {
+
+    .logo img {
+        transform: translate(10%, -50%);
+    }
+}
