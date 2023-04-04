@@ -47,16 +47,18 @@
   margin: 0 auto;
   margin-bottom: 2rem;
   padding: 1rem;
+  padding-bottom: 3rem;
 
   .menu-style {
     width: 50%;
   }
+    padding-bottom: 3rem;
 
-  article {
+  .menu-item {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   h2 {
@@ -70,36 +72,40 @@
 
   .menu-item {
     margin-bottom: 1rem;
+
     h4 {
-      font-size: 1rem;
       font-weight: 400;
       margin: 0;
+      font-size: 1rem;
     }
 
     p {
-      font-size: 1rem;
       margin: 0;
+      font-size: 1rem;
     }
   }
 }
 
 @media (min-width: 53.125em) {
-  .menu-style {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    justify-items: center;
-    .menu-sub-section {
+  #menu-wine,
+  #menu-food {
+    .menu-style {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       width: 100%;
-    }
-    .menu-item {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      justify-items: center;
+      .menu-sub-section {
+        width: 100%;
+      }
+      .menu-item {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 
-      h4,
-      p {
-        margin: 1rem;
+        h4,
+        p {
+          font-size: 1.2rem;
+        }
       }
     }
   }

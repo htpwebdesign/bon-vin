@@ -124,7 +124,7 @@ function bon_vin_scripts() {
 	wp_enqueue_style( 'bon-vin-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'bon-vin-style', 'rtl', 'replace' );
 
-	wp_enqueue_style('fwd-googlefonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Quicksand:wght@300;500;600&display=swap', array(), null);
+	wp_enqueue_style('fwd-googlefonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Quicksand:wght@400;600&display=swap', array(), null);
 
 	wp_enqueue_script( 'bon-vin-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -136,10 +136,14 @@ function bon_vin_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	if (is_shop()){
 	wp_enqueue_script( 'bon-vin-shop-filters', get_template_directory_uri() . '/js/shop-filters.js', array(), _S_VERSION, true );
-
 	wp_enqueue_script( 'bon-vin-shop-filters-dropdown', get_template_directory_uri() . '/js/shop-filters-dropdown.js', array(), _S_VERSION, true );
+	}
+
+	if(is_page(26)){
 	wp_enqueue_script( 'bon-vin-accordion', get_template_directory_uri() . '/js/accordion.js', array(), _S_VERSION, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bon_vin_scripts' );
 
