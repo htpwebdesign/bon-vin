@@ -54,13 +54,13 @@ get_header();
 				<?php
 			}
 		?>
-			<section class="catering-form">
+			<div class="catering-form">
 				<?php
 				if ( function_exists ( 'gravity_form' ) ) {
 					gravity_form( 1, false, false, false, '', false );
 				}
 				?>
-			</section>
+			</div>
 
 			<section class="catering-cta">
 			<?php
