@@ -1,30 +1,37 @@
 .page-id-32 {
   background-color: $creme;
+
   // margin: 0 70px;
   .site-main {
     text-align: center;
     margin: 0 70px;
   }
+
   .catering-form .button {
     background-color: $green;
     color: $creme;
   }
+
   .site-footer {
     background-color: $green;
     color: $creme;
     width: 100%;
   }
+
   h1 {
     color: $pink;
     text-shadow: -4px 0px black;
     text-transform: uppercase;
   }
+
   h2 {
     text-decoration: underline;
   }
+
   h3 {
     margin-bottom: -20px;
   }
+
   .catering-cta {
     margin-bottom: 40px;
   }
@@ -32,12 +39,15 @@
   input {
     border: $green solid 2px;
   }
+
   select {
     border: $green solid 2px;
   }
+
   .gform_footer {
     justify-content: center;
   }
+
   .button {
     background-color: $pink;
     padding: 1rem 2rem;
@@ -47,7 +57,25 @@
     // padding-left: 2rem;
     border-radius: 10px;
   }
+
+  .gform_wrapper.gravity-theme .gfield_label {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  form {
+    legend {
+      text-align: left;
+    }
+  }
+
+
+  .gform_wrapper.gravity-theme .ginput_container_date input {
+    width: 100%;
+  }
 }
+
+
 
 // .catering-form .ginput_container {
 //   border: solid $green 3px;
@@ -58,6 +86,7 @@
     .catering-packages {
       text-align: left;
     }
+
     .site-main {
       margin: 0 300px;
     }
