@@ -337,4 +337,7 @@ if (is_product() ) {
 }
 add_action( 'wp', 'remove_add_to_cart_product_page', 10);
 
-add_filter( 'single_product_archive_thumbnail_size', 'woocommerce_single');
+add_filter( 'single_product_archive_thumbnail_size', 'fwd_change_shop_img_size' );
+function fwd_change_shop_img_size() {
+   return 'woocommerce_single';
+}
