@@ -67,10 +67,10 @@ get_header();
 						}
 					}
 					?>
-				</nav>
-				<div class= "content-wrapper">	
+				</section>
+				
 
-				<div class="wine-list-title">
+				<section class="wine-list-title">
 					<?php
 					if ( get_field( 'wine_list_title' ) ) : ?>
 						<h3><?php the_field( 'wine_list_title' ); ?></h3>
@@ -87,8 +87,6 @@ get_header();
 						endif;
 					?>
 				</div> 
-
-				</div>
 
 				<section class="wine-list">
 				<?php
