@@ -1,0 +1,232 @@
+.page-id-38 {
+
+    .content-wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .wine-list {
+        width: 100%;
+    }
+
+    footer {
+        background-color: $orange;
+    }
+
+    .site-main {
+        .shop-cta {
+            display: flex;
+            justify-content: center;
+
+            padding: 5rem;
+            background-color: $green;
+
+            a {
+                padding: 1rem 4rem 1rem 4rem;
+                background-color: $pink;
+                text-decoration: none;
+                color: $green;
+                border-radius: 5%;
+                border-bottom: $orange .4rem solid;
+                border-right: $orange .3rem solid;
+                border-top: white .4rem solid;
+                border-left: white .3rem solid;
+            }
+        }
+
+
+    }
+
+    .shop-all-cta {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+
+        a {
+            background-color: $pink;
+            text-decoration: none;
+            color: black;
+            @include button;
+            text-align: center;
+            box-shadow: 3px 2px black;
+
+        }
+    }
+
+
+    .flexed-wine {
+        text-align: center;
+
+        p {
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+    }
+
+    .wine-list-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .wine-list-description {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .wine-list {
+        gap: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        // display: inline-block;
+        text-align: center;
+
+        a {
+            background-color: $creme;
+            text-decoration: none;
+            color: $green;
+            @include button;
+            text-align: center;
+
+        }
+    }
+
+
+
+
+    .House.Red {
+        background-color: $orange;
+        padding: 2rem;
+
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        a {
+            background-color: $pink;
+            color: black;
+            box-shadow: 2px 2px white;
+            @include button;
+        }
+    }
+
+
+    .House.White {
+        background-color: $pink;
+        padding: 2rem;
+
+
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        a {
+            background-color: $green;
+            color: $creme;
+            box-shadow: 2px 2px white;
+            @include button;
+
+            :hover {
+                background-color: $green;
+            }
+        }
+    }
+
+    .House.Rosé {
+        background-color: $green;
+        color: $creme;
+        padding: 2rem;
+
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        a {
+            background-color: $orange;
+            color: black;
+            box-shadow: 2px 2px white;
+            @include button;
+
+        }
+    }
+
+
+    .hero-img {
+        position: relative;
+
+        img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+
+        }
+
+
+    }
+
+    .logo img {
+        position: absolute;
+        top: 50%;
+        width: 90%;
+        height: auto;
+        transform: translate(5%, -50%);
+        max-width: 622px;
+
+
+    }
+
+    @media screen and (min-width: 51.25em) {
+        .House.Red {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .House.House.White {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .House.House.Rosé {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+
+
+    @media screen and (min-width: 56.25em) {
+
+        .logo img {
+            transform: translate(10%, -50%);
+        }
+    }
+
+
+    @media screen and (min-width: 60.5em) {
+        .House.Red {
+            padding: 5rem;
+        }
+
+        .House.House.White {
+            padding: 5rem;
+
+        }
+
+        .House.House.Rosé {
+            padding: 5rem;
+
+        }
+
+        .flexed-wine {
+            padding-top: 2rem;
+        }
+    }
+
+
+
+
+}

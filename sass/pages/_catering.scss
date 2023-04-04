@@ -35,26 +35,25 @@
   select {
     border: $green solid 2px;
   }
-}
-
-.page-id-32 .button {
-  background-color: $pink;
-  padding: 1rem 2rem;
-  // padding-top: 1rem;
-  // padding-bottom: 1rem;
-  // padding-right: 2rem;
-  // padding-left: 2rem;
-  border-radius: 10px;
-}
-.gform_footer {
-  justify-content: center;
+  .gform_footer {
+    justify-content: center;
+  }
+  .button {
+    background-color: $pink;
+    padding: 1rem 2rem;
+    // padding-top: 1rem;
+    // padding-bottom: 1rem;
+    // padding-right: 2rem;
+    // padding-left: 2rem;
+    border-radius: 10px;
+  }
 }
 
 // .catering-form .ginput_container {
 //   border: solid $green 3px;
 // }
 
-@media (min-width: 900px) {
+@media (min-width: 56.25em) {
   .page-id-32 {
     .catering-packages {
       text-align: left;
@@ -62,9 +61,10 @@
     .site-main {
       margin: 0 300px;
     }
-  }
-  h3 {
-    text-align: left;
-    margin-bottom: -20px;
+
+    h3 {
+      text-align: left;
+      margin-bottom: -20px;
+    }
   }
 }

@@ -26,7 +26,8 @@ get_header();
 			$taxonomy = 'bon-vin-career-locations';
 			$terms = get_terms( 
 				array(
-					'taxonomy' => $taxonomy
+					'taxonomy' => $taxonomy,
+					'hide_empty' => false,
 				) 
 			);
 

@@ -40,7 +40,8 @@
 
     h2 {
         color: $creme;
-        background-color: rgba(0, 0, 0, 0.5);
+        text-shadow: -4px 0px black;
+        text-transform: uppercase;
         width: fit-content;
         margin: 0 auto;
         padding: .5rem 2rem;
@@ -52,6 +53,7 @@
         @include button;
         background-color: $green;
         text-decoration: none;
+        font-size: 1rem;
     }
 
     .location-button:link,
