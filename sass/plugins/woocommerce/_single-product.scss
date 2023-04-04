@@ -22,6 +22,7 @@
       }
       .price {
         text-align: center;
+        font-weight: 500;
       }
       .cart {
         display: flex;
@@ -41,10 +42,14 @@
           @include button;
           background-color: $pink;
           border: none;
+          box-shadow: 3px 2px black;
         }
       }
     }
     section.related {
+      h2 {
+        font-weight: 500;
+      }
       ul {
         display: flex;
         justify-content: space-between;

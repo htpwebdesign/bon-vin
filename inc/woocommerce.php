@@ -289,8 +289,8 @@ function product_change_title_position() {
 add_action( 'init', 'product_change_title_position' );
 
 // Remove quantities from product page 
-function custom_remove_all_quantity_fields( $return, $product ) {return true;}
-add_filter( 'woocommerce_is_sold_individually','custom_remove_all_quantity_fields', 10, 2 );
+// function custom_remove_all_quantity_fields( $return, $product ) {return true;}
+// add_filter( 'woocommerce_is_sold_individually','custom_remove_all_quantity_fields', 10, 2 );
 
 // Remove tabs from product page
 function my_remove_all_product_tabs( $tabs ) {
@@ -337,4 +337,4 @@ if (is_product() ) {
 }
 add_action( 'wp', 'remove_add_to_cart_product_page', 10);
 
-
+add_filter( 'single_product_archive_thumbnail_size', 'woocommerce_single');
