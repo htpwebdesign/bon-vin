@@ -101,6 +101,9 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        max-width: 50%;
+        margin-left: 0;
+        margin-right: 0;
 
         h4,
         p {
