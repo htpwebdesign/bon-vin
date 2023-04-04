@@ -40,7 +40,7 @@
         a {
             background-color: $pink;
             text-decoration: none;
-            color: $creme;
+            color: black;
             @include button;
             text-align: center;
             box-shadow: 3px 2px black;
@@ -50,62 +50,43 @@
 
 
     .flexed-wine {
+        text-align: center;
+
+        p {
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+    }
+
+    .wine-list-title {
         display: flex;
+        justify-content: center;
+    }
 
+    .wine-list-description {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
 
+    .wine-list {
+        gap: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        // display: inline-block;
+        text-align: center;
 
-        // .single-wine {
-
-        //     a {
-        //         display: flex;
-        //         // justify-content: center;
-        //         padding: 1rem;
-        //     }
-
-        //     img {
-        //         display: flex;
-        //     }
-
-
-
-        //     p {
-        //         max-width: 100%;
-        //         display: flex;
-        //         justify-content: center;
-        //         margin: .7rem;
-        //     }
-
-        // }
-
-        .wine-list-title {
-            display: flex;
-            justify-content: center;
-        }
-
-        .wine-list-description {
-            margin-left: 5rem;
-            margin-right: 5rem;
-        }
-
-        .wine-list {
-            gap: 3rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            // display: inline-block;
+        a {
+            background-color: $creme;
+            text-decoration: none;
+            color: $green;
+            @include button;
             text-align: center;
 
-            a {
-                background-color: $creme;
-                text-decoration: none;
-                color: $green;
-                @include button;
-                text-align: center;
-
-            }
         }
-
-
     }
+
+
+
 
     .House.Red {
         background-color: $orange;
@@ -120,6 +101,7 @@
             background-color: $pink;
             color: black;
             box-shadow: 2px 2px white;
+            @include button;
         }
     }
 
@@ -138,6 +120,7 @@
             background-color: $green;
             color: $creme;
             box-shadow: 2px 2px white;
+            @include button;
 
             :hover {
                 background-color: $green;
@@ -159,6 +142,7 @@
             background-color: $orange;
             color: black;
             box-shadow: 2px 2px white;
+            @include button;
 
         }
     }
@@ -188,6 +172,24 @@
 
     }
 
+    @media screen and (min-width: 51.25em) {
+        .House.Red {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .House.House.White {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .House.House.Rosé {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+
 
     @media screen and (min-width: 56.25em) {
 
@@ -195,5 +197,25 @@
             transform: translate(10%, -50%);
         }
     }
+
+
+    @media screen and (min-width: 60.5em) {
+        .House.Red {
+            padding: 5rem;
+        }
+
+        .House.House.White {
+            padding: 5rem;
+
+        }
+
+        .House.House.Rosé {
+            padding: 5rem;
+
+        }
+    }
+
+
+
 
 }
