@@ -1,5 +1,9 @@
 .page-id-38 {
 
+    .wine-list {
+        width: 100%;
+    }
+
     footer {
         background-color: $orange;
     }
@@ -163,7 +167,7 @@
     top: 50%;
     width: 90%;
     height: auto;
-    transform: translate(10%, -50%);
+    transform: translate(5%, -50%);
     max-width: 622px;
 
     // width: 50%;
@@ -172,4 +176,9 @@
 }
 
 
-@media screen and (min-width: 57.18em) {}
+@media screen and (min-width: 56.25em) {
+
+    .logo img {
+        transform: translate(10%, -50%);
+    }
+}

@@ -28,6 +28,8 @@
             color: black;
             border: .1rem solid black;
             border-radius: 0;
+            font-size: 1rem;
+            box-shadow: 3px 2px $pink;
         }
     }
 }
@@ -42,43 +44,51 @@
     max-width: 80%;
     margin: 0 auto;
     margin-bottom: 2rem;
-    max-width: 80%;
+    padding: 1rem;
 
     article {
         text-align: center;
     }
-}
 
-#menu-food {
-    margin-bottom: 5rem;
-}
-
-.page-id-21 {
-
-    footer {
-        background-color: $pink;
+    h2 {
+        font-size: 1.7rem;
     }
-}
 
-@media (min-width: 37.5em) {
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
 
-    #menu-wine,
-    #menu-food {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: flex-start;
+    .menu-item {
 
-        h2 {
-            width: 100%;
+        h4 {
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 1rem;
         }
     }
 }
 
-@media (min-width: 50em) {
 
-    .menu-nav {
-        max-width: 50%;
-        margin: 0 auto;
+@media (min-width: 53.125em) {
+
+    .menu-style {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        justify-items: center;
+
+        .menu-item {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            h4,
+            p {
+                margin: 1rem;
+            }
+        }
     }
 }
