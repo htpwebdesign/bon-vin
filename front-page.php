@@ -107,9 +107,10 @@ get_header();
 						<div class="flexed-wine">
 							<h3><?php echo esc_html( $title ); ?></h3>
 							<p><?php echo get_the_content( "", false, $featured_post->ID ); ?> </p>
+							<a href="<?php echo esc_url( $permalink ); ?>">Shop</a>
 						</div>
 						
-						<a href="<?php echo esc_url( $permalink ); ?>">Shop</a>
+						
 					</section>
 						
 					<?php endforeach; ?>
