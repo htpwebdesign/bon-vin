@@ -4,52 +4,77 @@
     width: 90%;
     margin: 0 auto;
   }
-  .accord-button {
-    background-color: $soft-pink;
-  }
-  .careers-location {
-    background-color: $soft-pink;
-  }
   .site-footer {
+    background-color: $soft-pink;
+    margin-top: 20px;
+    color: black;
+    svg path {
+      fill: black;
+    }
+  }
+  .accord-button {
     background-color: $green;
+    color: white;
   }
   .active,
   .accord-button:hover {
-    background-color: $pink;
+    background-color: $orange;
+    color: black;
     cursor: pointer;
+  }
+
+  .active {
+    margin-bottom: 0;
   }
 
   .careers-location {
     padding: 0 18px;
-    background-color: white;
-    display: none;
+    display: block;
+    height: 0;
     overflow: hidden;
+    transition: height 2s;
+    background-color: $creme;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .careers-location.show {
+    height: auto;
+    padding-bottom: 1rem;
+    border: 2px solid $orange;
+    border-top: none;
   }
   button {
     width: 100%;
     margin: 20px 0;
     @include button;
   }
-  .careers-location {
-    background-color: $soft-pink;
-    padding-bottom: 1rem;
-  }
-  .site-footer {
-    margin-top: 20px;
-    color: $creme;
-    svg {
-      path {
-        fill: $creme;
-      }
-    }
-  }
+
   .careers-location a {
     background-color: $pink;
     color: black;
     text-decoration: none;
     border-radius: 10px;
     padding: 0.25rem;
+    font-size: 1.2rem;
+    box-shadow: 3px 2px black;
     @include button;
+  }
+
+  .careers-location a:hover {
+    background-color: $soft-pink;
+  }
+
+  .career-job {
+    h3 {
+      text-align: left;
+      font-weight: 400;
+      border-bottom: 1px solid black;
+    }
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
 @media (min-width: 900px) {
@@ -59,10 +84,19 @@
   //     margin: 0 auto;
   //   }
 
-  .page-id-26 .accord-button {
-    display: block;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 50%;
+  .page-id-26 {
+    .accord-button {
+      display: block;
+      margin: 20px auto;
+      max-width: 80%;
+    }
+    .accord-button.active {
+      margin-bottom: 0;
+    }
+    .careers-location {
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
