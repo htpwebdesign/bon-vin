@@ -45,6 +45,7 @@
     margin: 0 auto;
     margin-bottom: 2rem;
     padding: 1rem;
+    padding-bottom: 3rem;
 
     article {
         text-align: center;
@@ -82,7 +83,7 @@
 
         .menu-item {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
 
             h4,

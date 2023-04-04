@@ -95,15 +95,14 @@ body {
 		}
 
 		ul {
-			font-size: 1.3rem;
+			font-size: 1.7rem;
 			text-transform: uppercase;
-			font-weight: 500;
+			font-weight: $subheader_weight;
 			color: black;
 			display: flex;
 			gap: 1.5rem;
 			justify-content: end;
 			margin-top: 2rem;
-			// margin-right: 1.5rem;
 			max-width: 95%;
 			position: relative;
 
