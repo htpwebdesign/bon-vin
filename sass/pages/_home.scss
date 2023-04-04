@@ -49,136 +49,151 @@
     }
 
 
-    .single-wine {
-
-        a {
-            display: flex;
-            // justify-content: center;
-            padding: 1rem;
-        }
-
-        img {
-            display: flex;
-        }
+    .flexed-wine {
+        display: flex;
 
 
 
-        p {
-            max-width: 100%;
+        // .single-wine {
+
+        //     a {
+        //         display: flex;
+        //         // justify-content: center;
+        //         padding: 1rem;
+        //     }
+
+        //     img {
+        //         display: flex;
+        //     }
+
+
+
+        //     p {
+        //         max-width: 100%;
+        //         display: flex;
+        //         justify-content: center;
+        //         margin: .7rem;
+        //     }
+
+        // }
+
+        .wine-list-title {
             display: flex;
             justify-content: center;
-            margin: .7rem;
         }
 
-    }
+        .wine-list-description {
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
 
-    .wine-list {
-        gap: 3rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        display: inline-block;
-        text-align: center;
-
-        a {
-            background-color: $creme;
-            text-decoration: none;
-            color: $green;
-            @include button;
+        .wine-list {
+            gap: 3rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            // display: inline-block;
             text-align: center;
 
+            a {
+                background-color: $creme;
+                text-decoration: none;
+                color: $green;
+                @include button;
+                text-align: center;
+
+            }
+        }
+
+
+    }
+
+    .House.Red {
+        background-color: $orange;
+        padding: 2rem;
+
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        a {
+            background-color: $pink;
+            color: black;
+            box-shadow: 2px 2px white;
         }
     }
 
 
-}
-
-.House.Red {
-    background-color: $orange;
-    padding: 2rem;
-
-    img {
-        border-radius: 20px;
-        max-width: 100%;
-    }
-
-    a {
+    .House.White {
         background-color: $pink;
-        color: black;
-        box-shadow: 2px 2px white;
+        padding: 2rem;
+
+
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        a {
+            background-color: $green;
+            color: $creme;
+            box-shadow: 2px 2px white;
+
+            :hover {
+                background-color: $green;
+            }
+        }
     }
-}
 
-
-.House.White {
-    background-color: $pink;
-    padding: 2rem;
-
-
-    img {
-        border-radius: 20px;
-        max-width: 100%;
-    }
-
-    a {
+    .House.Rosé {
         background-color: $green;
         color: $creme;
-        box-shadow: 2px 2px white;
+        padding: 2rem;
 
-        :hover {
-            background-color: $green;
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        a {
+            background-color: $orange;
+            color: black;
+            box-shadow: 2px 2px white;
+
         }
     }
-}
 
-.House.Rosé {
-    background-color: $green;
-    color: $creme;
-    padding: 2rem;
 
-    img {
-        border-radius: 20px;
-        max-width: 100%;
-    }
+    .hero-img {
+        position: relative;
 
-    a {
-        background-color: $orange;
-        color: black;
-        box-shadow: 2px 2px white;
+        img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+
+        }
+
 
     }
-}
-
-
-.hero-img {
-    position: relative;
-
-    img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-
-    }
-
-
-}
-
-.logo img {
-    position: absolute;
-    top: 50%;
-    width: 90%;
-    height: auto;
-    transform: translate(5%, -50%);
-    max-width: 622px;
-
-    // width: 50%;
-    // height: 50%;
-
-}
-
-
-@media screen and (min-width: 56.25em) {
 
     .logo img {
-        transform: translate(10%, -50%);
+        position: absolute;
+        top: 50%;
+        width: 90%;
+        height: auto;
+        transform: translate(5%, -50%);
+        max-width: 622px;
+
+
     }
+
+
+    @media screen and (min-width: 56.25em) {
+
+        .logo img {
+            transform: translate(10%, -50%);
+        }
+    }
+
 }
