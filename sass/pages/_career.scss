@@ -36,6 +36,12 @@
   }
   .site-footer {
     margin-top: 20px;
+    color: $creme;
+    svg {
+      path {
+        fill: $creme;
+      }
+    }
   }
   .careers-location a {
     background-color: $pink;
