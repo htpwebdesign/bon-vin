@@ -231,8 +231,8 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 //remove widgits
 
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
+$wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
+$wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
 
 function wporg_remove_dashboard_widget() {
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
@@ -242,4 +242,21 @@ function wporg_remove_dashboard_widget() {
 
 add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
 
+//admin menu bar
 
+function post_remove ()      //creating functions post_remove for removing menu item
+{ 
+   remove_menu_page('edit.php');
+}
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
+
+
+
+/**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
