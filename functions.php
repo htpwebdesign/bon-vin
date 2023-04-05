@@ -243,10 +243,10 @@ function wporg_remove_dashboard_widget() {
 add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
 
 //admin menu bar
-
 function post_remove ()      //creating functions post_remove for removing menu item
 { 
    remove_menu_page('edit.php');
+   remove_menu_page( 'edit-comments.php' );
 }
 
 add_action('admin_menu', 'post_remove');   //adding action for triggering function call

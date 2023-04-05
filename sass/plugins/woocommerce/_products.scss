@@ -51,6 +51,7 @@
 
   .filter-wrapper.show {
     height: 13rem;
+
     .filter-dropdown {
       border-bottom: 1px solid black;
     }
@@ -74,7 +75,11 @@
 
       a {
         text-decoration: none;
-        color: black;
+        color: $green;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-top: .25rem;
       }
 
       img {
@@ -181,6 +186,7 @@
 
       li.product {
         max-width: 22%;
+
         img {
           height: 12rem;
         }
