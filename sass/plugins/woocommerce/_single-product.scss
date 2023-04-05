@@ -6,7 +6,8 @@
   }
   .site-main {
     max-width: 90%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 
     h1 {
       grid-area: title;
@@ -36,19 +37,33 @@
           }
         }
         .single_add_to_cart_button {
-          order: -1;
+          order: -2;
           display: block;
           margin: 0 auto;
           @include button;
+          margin-top: 0.5rem;
           background-color: $pink;
           border: none;
           box-shadow: 3px 2px black;
+        }
+        .quantity {
+          order: -2;
+
+          width: 100%;
+          input {
+            margin: 0 auto;
+            display: block;
+          }
         }
       }
     }
     section.related {
       h2 {
         font-weight: 500;
+      }
+      img {
+        height: 10rem;
+        object-fit: cover;
       }
       ul {
         display: flex;
@@ -103,6 +118,12 @@
           }
           .woocommerce-product-attributes {
             max-width: 360px;
+          }
+          .quantity {
+            input {
+              margin: 0 0 0.5rem;
+              display: block;
+            }
           }
         }
       }

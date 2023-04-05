@@ -23,13 +23,13 @@
           featureType: "landscape",
           stylers: [
             {
-              hue: "#FFB000",
+              hue: "#FFC18D",
             },
             {
               saturation: 71.66666666666669,
             },
             {
-              lightness: -28.400000000000006,
+              lightness: -8.400000000000006,
             },
             {
               gamma: 1,
@@ -46,7 +46,7 @@
               saturation: -76.6,
             },
             {
-              lightness: 113,
+              lightness: 11,
             },
             {
               gamma: 1,
@@ -60,10 +60,10 @@
               hue: "#FF8300",
             },
             {
-              saturation: -77,
+              saturation: -7,
             },
             {
-              lightness: 27.400000000000006,
+              lightness: -7.400000000000006,
             },
             {
               gamma: 1,
@@ -77,10 +77,10 @@
               hue: "#FF8C00",
             },
             {
-              saturation: -66.6,
+              saturation: -6.6,
             },
             {
-              lightness: 34.400000000000006,
+              lightness: -4.400000000000006,
             },
             {
               gamma: 1,
@@ -91,13 +91,13 @@
           featureType: "water",
           stylers: [
             {
-              hue: "#00C4FF",
+              hue: "#F4FBFF",
             },
             {
               saturation: 22.799999999999997,
             },
             {
-              lightness: -11.399999999999991,
+              lightness: 50.399999999999991,
             },
             {
               gamma: 1,
@@ -108,13 +108,13 @@
           featureType: "poi",
           stylers: [
             {
-              hue: "#9FFF00",
+              hue: "#094925",
             },
             {
-              saturation: 0,
+              saturation: -60,
             },
             {
-              lightness: -23.200000000000003,
+              lightness: -2.200000000000003,
             },
             {
               gamma: 1,

@@ -4,7 +4,6 @@
     .content-wrapper {
       max-width: 90%;
       margin: 0 auto;
-      padding-top: 2rem;
     }
     h1 {
       font-size: 2rem;
@@ -19,6 +18,9 @@
     ul {
       margin: 0;
       padding-inline-start: 20px;
+      li {
+        font-size: 1rem;
+      }
     }
 
     .single-job-apply {
@@ -30,6 +32,8 @@
         color: black;
         text-decoration: none;
         font-weight: 500;
+        @include button;
+        box-shadow: 3px 2px black;
       }
     }
 
@@ -44,7 +48,6 @@
         max-width: 700px;
         display: block;
         margin: 0 auto;
-        padding-bottom: 10rem;
       }
     }
   }
