@@ -242,4 +242,10 @@ function wporg_remove_dashboard_widget() {
 
 add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
 
-
+/**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
