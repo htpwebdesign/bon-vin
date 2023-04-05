@@ -4,7 +4,6 @@
   font-weight: $subheader_weight;
 
   .shop_table {
-
     border: $orange solid 2px;
     background-color: white;
     color: black;
@@ -14,7 +13,6 @@
     margin-bottom: 2rem;
 
     thead {
-
       tr {
         text-decoration: underline;
         font-size: 1.3rem;
@@ -23,14 +21,12 @@
   }
 
   .product-remove {
-    
     a {
       text-decoration: none;
     }
   }
 
   .product-name {
-    
     a {
       text-decoration: none;
       font-size: 1.3rem;
@@ -44,7 +40,6 @@
 
   .product-price,
   .woocommerce-Price-amount {
-
     bdi {
       font-size: 1.3rem;
     }
@@ -111,7 +106,6 @@
   }
 
   .wp-element-button {
-
     @include button;
     background-color: $pink;
     font-size: 1rem;
@@ -138,7 +132,6 @@
     margin-top: 1.5rem;
 
     svg {
-
       path {
         fill: $creme;
       }
@@ -147,7 +140,6 @@
 }
 
 .single.single-product {
-
   .woocommerce-message {
     background-color: $pink;
     clear: both;
@@ -159,7 +151,7 @@
 
     a {
       background-color: white;
-      padding: .5rem;
+      padding: 0.5rem;
       color: black;
       text-decoration: none;
       margin-right: 1rem;
@@ -173,7 +165,6 @@
 }
 
 @media (min-width: 43.75em) {
-
   .wp-element-button {
     margin-left: 20px;
   }
@@ -184,7 +175,7 @@
     li {
       list-style: none;
     }
-    
+
     .checkout-button.button {
       margin: 0 auto;
     }
@@ -197,11 +188,8 @@
 }
 
 @media (min-width: 50em) {
-
   .page-id-13 {
-
     .coupon {
-
       button.wp-element-button {
         height: 2rem;
       }

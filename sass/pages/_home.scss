@@ -1,8 +1,8 @@
 .page-id-38 {
 
-    .site-main {
-        margin-top: 0;
-    }
+    // .site-main {
+    //     margin-top: 0;
+    // }
 
     .content-wrapper {
         max-width: 90%;
@@ -20,6 +20,9 @@
     }
 
     .site-main {
+
+        margin-top: 0;
+
         .shop-cta {
             display: flex;
             justify-content: center;
@@ -183,6 +186,12 @@
             width: 100vw;
             height: 100vh;
             object-fit: cover;
+        }
+
+        svg {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
         }
     }
 
