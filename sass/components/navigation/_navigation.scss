@@ -59,6 +59,15 @@ body {
       // &.focus>a {}
     }
 
+		li {
+			position: relative;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+		}
+	}
     a {
       display: block;
       text-decoration: none;
@@ -138,6 +147,9 @@ body {
     }
   }
 
+			:hover {
+				color: $orange;
+			}
   .comment-navigation,
   .posts-navigation,
   .post-navigation {

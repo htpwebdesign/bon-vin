@@ -223,9 +223,8 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $creme;
+	background-color: $woocommerce__color-success;
 	clear: both;
-	font-family: $subheader_paragraph;
 }
 
 .woocommerce-info,

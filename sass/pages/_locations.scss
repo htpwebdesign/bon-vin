@@ -33,10 +33,20 @@
 
 .location {
     position: relative;
+
+    img:hover {
+        opacity: 1;
+    }
 }
 
 .location-style {
     @include center-text;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h2 {
         color: $creme;
@@ -54,6 +64,7 @@
         background-color: $green;
         text-decoration: none;
         font-size: 1rem;
+        transition: background-color .5s ease-in;
     }
 
     .location-button:link,
@@ -65,8 +76,8 @@
         background-color: $creme;
         color: $green;
     }
-
 }
+
 
 @media (min-width: 62.5em) {
 
@@ -101,17 +112,22 @@
         left: 50%;
         transform: translate(-50%, -50%);
         @include button;
-        background-color: #fff;
+        background-color: white;
         color: black;
         text-decoration: none;
         text-align: center;
-        font-size: 1rem;
+        transition: background-color .5s ease-in;
     }
+
+    .locations-menu-btn:hover {
+            background-color: black;
+            color: $creme;
+        }
 
     img {
         display: block;
         object-fit: cover;
-        max-height: 100vh;
+        max-height: 60vh;
     }
 }
 
@@ -122,6 +138,7 @@
     p {
         max-width: 90%;
         padding: 1rem;
+        margin: 0;
     }
 }
 
@@ -183,6 +200,12 @@
         color: black;
         max-width: fit-content;
         margin: 0 auto;
+        transition: background-color .5s ease-in;
+    }
+
+    a:hover {
+        background-color: black;
+        color: white;
     }
 }
 
@@ -194,6 +217,34 @@
 }
 
 @media (min-width: 37.5em) {
+
+    .hours-contact {
+
+        h2 {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .hours,
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            align-content: flex-start;
+            padding: 1rem;
+
+            h2 {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
 
     .entry-header.locations {
 
