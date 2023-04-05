@@ -1,10 +1,11 @@
 body {
   background-color: $creme;
 }
+
 .main-navigation {
   display: block;
   width: 100%;
-  background-color: $creme;
+  background-color: $soft-pink;
 
   ul {
     display: none;
@@ -38,9 +39,6 @@ body {
         width: 200px;
       }
 
-      // :hover>a,
-      // .focus>a {}
-
       a li:hover,
       a li.focus {
         color: $pink;
@@ -55,25 +53,25 @@ body {
     li {
       position: relative;
       width: 100%;
-      // &:hover>a,
-      // &.focus>a {}
     }
 
+		li {
+			position: relative;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+		}
+	}
     a {
       display: block;
       text-decoration: none;
       font-size: 1.5rem;
-
       color: black;
       text-align: center;
     }
-
-    // 	.current_page_item>a,
-    // 	.current-menu-item>a,
-    // 	.current_page_ancestor>a,
-    // 	.current-menu-ancestor>a {}
-    // }
-  }
+  
 
   /* Small menu. */
   .menu-toggle,
@@ -84,7 +82,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: $creme;
+    background-color: $soft-pink;
     border: 2px solid $orange;
     z-index: 500;
     svg {
@@ -96,11 +94,11 @@ body {
     position: absolute;
     left: 20px;
     right: 20px;
-    // bottom: -20px;
     z-index: 900;
   }
 
   @media screen and (min-width: 37.5em) {
+    background-color: $creme;
     .menu-toggle {
       display: none;
     }
@@ -127,7 +125,6 @@ body {
 
       :hover {
         color: $orange;
-        text-decoration: underline solid;
       }
 
       a {
@@ -137,6 +134,9 @@ body {
     }
   }
 
+			:hover {
+				color: $orange;
+			}
   .comment-navigation,
   .posts-navigation,
   .post-navigation {

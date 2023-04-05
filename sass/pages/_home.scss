@@ -38,9 +38,11 @@
                 border-top: white .4rem solid;
                 border-left: white .3rem solid;
             }
+
+            a:hover {
+                transform: scale(0.9);
+            }
         }
-
-
     }
 
     .shop-all-cta {
@@ -55,10 +57,12 @@
             @include button;
             text-align: center;
             box-shadow: 3px 2px black;
+        }
 
+        a:hover {
+            transform: scale(0.9);
         }
     }
-
 
     .flexed-wine {
         text-align: center;
@@ -70,8 +74,8 @@
     }
 
     .wine-list-title {
-        display: flex;
-        justify-content: center;
+        // display: flex;
+        // justify-content: center;
 
         h3 {
             text-align: center;
@@ -88,10 +92,7 @@
             margin-right: 7%;
             text-align: center;
             margin-bottom: 5%;
-
         }
-
-
     }
 
     .wine-list {
@@ -106,12 +107,8 @@
             color: $green;
             @include button;
             text-align: center;
-
         }
     }
-
-
-
 
     .House.Red {
         background-color: $orange;
@@ -127,14 +124,13 @@
             color: black;
             box-shadow: 2px 2px white;
             @include button;
+            transition: background-color .5s ease-in;
         }
     }
-
 
     .House.White {
         background-color: $pink;
         padding: 2rem;
-
 
         img {
             border-radius: 20px;
@@ -146,10 +142,7 @@
             color: $creme;
             box-shadow: 2px 2px white;
             @include button;
-
-            :hover {
-                background-color: $green;
-            }
+            transition: background-color .5s ease-in;
         }
     }
 
@@ -165,10 +158,20 @@
 
         a {
             background-color: $orange;
+            transition: background-color .5s ease-in;
             color: black;
             box-shadow: 2px 2px white;
             @include button;
+        }
+    }
 
+    .House.Red,
+    .House.White,
+    .House.Rosé {
+
+        a:hover {
+            background-color: white;
+            color: black;
         }
     }
 
@@ -180,10 +183,7 @@
             width: 100vw;
             height: 100vh;
             object-fit: cover;
-
         }
-
-
     }
 
     .logo img {
@@ -193,11 +193,10 @@
         height: auto;
         transform: translate(5%, -50%);
         max-width: 622px;
-
-
     }
 
     @media screen and (min-width: 51.25em) {
+
         .House.Red {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -212,7 +211,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
-
     }
 
 
@@ -243,8 +241,4 @@
             padding-top: 5rem;
         }
     }
-
-
-
-
 }
