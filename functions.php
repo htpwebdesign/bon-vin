@@ -231,16 +231,19 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 //remove widgits
 
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
-
-function wporg_remove_dashboard_widget() {
+function wporg_remove_all_dashboard_metaboxes() {
+	// Remove Welcome panel
+	remove_action( 'welcome_panel', 'wp_welcome_panel' );
+	// Remove the rest of the dashboard widgets
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_quick_draft', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
+	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
+	remove_meta_box( 'wc_admin_dashboard_setup', 'dashboard', 'normal');
+	remove_meta_box('dashboard_plugins',           'dashboard', 'normal');
 }
-
-add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
+add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
 
 /**
  * Lower Yoast SEO Metabox location
