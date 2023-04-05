@@ -231,8 +231,8 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 //remove widgits
 
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
+$wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
+$wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
 
 function wporg_remove_dashboard_widget() {
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
