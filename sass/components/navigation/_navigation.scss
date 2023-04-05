@@ -1,6 +1,7 @@
 body {
   background-color: $creme;
 }
+
 .main-navigation {
   display: block;
   width: 100%;
@@ -38,9 +39,6 @@ body {
         width: 200px;
       }
 
-      // :hover>a,
-      // .focus>a {}
-
       a li:hover,
       a li.focus {
         color: $pink;
@@ -55,8 +53,6 @@ body {
     li {
       position: relative;
       width: 100%;
-      // &:hover>a,
-      // &.focus>a {}
     }
 
     li {
@@ -72,16 +68,9 @@ body {
     display: block;
     text-decoration: none;
     font-size: 1.5rem;
-
     color: black;
     text-align: center;
   }
-
-  // 	.current_page_item>a,
-  // 	.current-menu-item>a,
-  // 	.current_page_ancestor>a,
-  // 	.current-menu-ancestor>a {}
-  // }
 
   /* Small menu. */
   .menu-toggle,
@@ -104,7 +93,6 @@ body {
     position: absolute;
     left: 20px;
     right: 20px;
-    // bottom: -20px;
     z-index: 900;
   }
 
@@ -136,7 +124,6 @@ body {
 
       :hover {
         color: $orange;
-        text-decoration: underline solid;
       }
 
       a {

@@ -209,3 +209,37 @@ function my_acf_google_map_api( $api ){
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+
+//custom dashboard
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Your Site Name and Info';
+}
+add_filter( 'login_headertext', 'my_login_logo_url_title' );
+
+//login
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+//remove widgits
+
+// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
+// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
+
+function wporg_remove_dashboard_widget() {
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_quick_draft', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
+}
+
+add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
+
+

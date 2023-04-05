@@ -1,0 +1,67 @@
+/* styles are relative to index.php */
+
+/* custom form styling */
+
+/* form background */
+body.login div#login form#loginform {
+    background-color: #094925;
+}
+
+/* form labels */
+body.login div#login form#loginform p label,
+body.login div#login form#loginform div label {
+    color: #d48949
+}
+
+/* form submit button */
+body.login div#login form#loginform p.submit input#wp-submit {
+    background-color: #FFF9EF;
+    color: #d48949
+}
+
+/* form input field */
+body.login div#login form#loginform input {
+    color: #d48949
+}
+
+/* text under login form */
+.login #nav a,
+.login #backtoblog a {
+    text-decoration: none;
+    color: black;
+    background-color: #efa7ca;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.login #nav a:hover,
+.login #nav a:focus,
+.login #backtoblog a:hover,
+.login #backtoblog a:focus {
+    color: black;
+    background-color: #fff9ef;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    border: 1px solid #d48949
+}
+
+/* custom login logo */
+body.login div#login h1 a {
+    background-image: url("images/bonvin.png");
+    background-size: 250px 250px;
+    height: 250px;
+    width: 250px;
+    /* transform: scaleX(-1); */
+}
+
+/* custom background image */
+
+body.login {
+   background-color: #FFF9EF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
