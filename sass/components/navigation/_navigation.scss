@@ -2,8 +2,6 @@ body {
 	background-color: $creme;
 }
 
-
-
 .main-navigation {
 	display: block;
 	width: 100%;
@@ -41,9 +39,6 @@ body {
 				width: 200px;
 			}
 
-			// :hover>a,
-			// .focus>a {}
-
 			a li:hover,
 			a li.focus {
 				color: $pink;
@@ -57,21 +52,12 @@ body {
 
 		li {
 			position: relative;
-
-			// &:hover>a,
-			// &.focus>a {}
 		}
 
 		a {
 			display: block;
 			text-decoration: none;
 		}
-
-		// 	.current_page_item>a,
-		// 	.current-menu-item>a,
-		// 	.current_page_ancestor>a,
-		// 	.current-menu-ancestor>a {}
-		// }
 	}
 
 	/* Small menu. */
@@ -109,7 +95,6 @@ body {
 
 			:hover {
 				color: $orange;
-				text-decoration: underline solid;
 			}
 
 			a {
