@@ -75,7 +75,7 @@ get_header();
 						$link_url = $link['url'];
 						$link_title = $link['title'];
 						?>
-						<a class="button" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+						<div class="c-button"><a href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a></div>
 						<?php
 					endif;
 				endif;
