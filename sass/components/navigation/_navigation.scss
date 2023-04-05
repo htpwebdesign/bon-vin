@@ -56,23 +56,22 @@ body {
       width: 100%;
     }
 
-		li {
-			position: relative;
-		}
+    li {
+      position: relative;
+    }
 
-		a {
-			display: block;
-			text-decoration: none;
-		}
-	}
     a {
       display: block;
       text-decoration: none;
-      font-size: 1.5rem;
-      color: black;
-      text-align: center;
     }
-  
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+  }
 
   /* Small menu. */
   .menu-toggle,
@@ -135,9 +134,9 @@ body {
     }
   }
 
-			:hover {
-				color: $orange;
-			}
+  :hover {
+    color: $orange;
+  }
   .comment-navigation,
   .posts-navigation,
   .post-navigation {
