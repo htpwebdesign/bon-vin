@@ -108,13 +108,13 @@
           featureType: "poi",
           stylers: [
             {
-              hue: "#9FFF00",
+              hue: "#094925",
             },
             {
-              saturation: 0,
+              saturation: -60,
             },
             {
-              lightness: 23.200000000000003,
+              lightness: -2.200000000000003,
             },
             {
               gamma: 1,
