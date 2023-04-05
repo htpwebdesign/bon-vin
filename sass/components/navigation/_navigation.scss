@@ -5,8 +5,7 @@ body {
 .main-navigation {
   display: block;
   width: 100%;
-  background-color: $creme;
-  position: absolute;
+  background-color: $soft-pink;
 
   ul {
     display: none;
@@ -83,7 +82,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: $creme;
+    background-color: $soft-pink;
     border: 2px solid $orange;
     z-index: 500;
     svg {
@@ -99,6 +98,7 @@ body {
   }
 
   @media screen and (min-width: 37.5em) {
+    background-color: $creme;
     .menu-toggle {
       display: none;
     }
