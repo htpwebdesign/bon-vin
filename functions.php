@@ -252,3 +252,55 @@ function yoast_to_bottom(){
 	return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// Edit wysiwyg
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+function my_toolbars( $toolbars )
+{
+
+    $toolbars['Bon Vin Toolbar' ] = array();
+    $toolbars['Bon Vin Toolbar' ][1] = array( 'bullist' );
+
+	//  remove the 'Basic' toolbar completely
+    unset( $toolbars['Basic' ] );
+	unset( $toolbars['Full' ] );
+
+	return $toolbars;
+}
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+
+function wporg_add_network_dashboard_widgets() {
+	
+	wp_add_dashboard_widget(
+		'bon_vin_tutorial_one',                          // Widget slug.
+		esc_html__( 'Adding products, changing featured wine, and how to get products to appear on menu.', 'bon-vin' ), // Title.
+		'bon_vin_tutorial_one_render'                    // Display function.
+	); 
+	wp_add_dashboard_widget(
+		'bon_vin_tutorial_two',                          // Widget slug.
+		esc_html__( 'Adding locations and career posts.' ), // Title.
+		'bon_vin_tutorial_two_render'                    // Display function.
+	);
+}
+add_action( 'wp_dashboard_setup', 'wporg_add_network_dashboard_widgets' );
+
+/**
+ * Create the function to output the content of our Dashboard Widget.
+ */
+function bon_vin_tutorial_one_render() {
+	?>
+	<iframe width="400" height="225" src="https://www.youtube.com/embed/CDYiYziukJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<?php
+}
+
+function bon_vin_tutorial_two_render() {
+	?>
+	<iframe width="400" height="225" src="https://www.youtube.com/embed/o8dt2MQj4H0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<?php
+}
+
