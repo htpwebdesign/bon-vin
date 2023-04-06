@@ -129,7 +129,16 @@
     .locations-menu-btn:hover {
             background-color: black;
             color: $creme;
-        }
+    }
+
+    .single-location-style {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
 
     img {
         display: block;

@@ -1,12 +1,16 @@
 .site {
+
   .site-footer {
     text-align: center;
     color: black;
     padding-bottom: 1rem;
+
     svg path {
       fill: black;
     }
+
     section {
+
       p {
         margin-bottom: 0;
       }
@@ -24,6 +28,7 @@
 
     .menu-footer-left-container {
       margin: 2rem 0.5rem;
+
       a {
         text-decoration: none;
         color: inherit;
@@ -44,12 +49,14 @@
     }
 
     @media (min-width: 500px) {
+
       .menu-footer-left-container ul {
         display: flex;
         justify-content: space-around;
         width: 17rem;
         margin: 2rem auto;
       }
+
       .menu-footer-right-container ul {
         width: 14.5rem;
       }
@@ -62,6 +69,7 @@
         font-weight: 400;
         margin: 0 0 0.5rem;
       }
+      
       .footer-navigation {
         display: flex;
         justify-content: space-between;

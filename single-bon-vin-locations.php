@@ -17,26 +17,30 @@ get_header();
 	?>
 
 	<header class="entry-header locations">
-        <?php the_title( "<h1 class='entry-title locations'>", "</h1>" );
-			$image = get_field('single_location');
-			$size = 'full';
-				if( $image ) {
-				echo wp_get_attachment_image( $image, $size );
-				}
+		<?php
+		$image = get_field('single_location');
+		$size = 'full';
+		if( $image ) {
+			echo wp_get_attachment_image( $image, $size );
+		}
 		?>
 
-		<?php
-		if ( get_field('cta') ) {
-			$link = get_field('cta');
-			if ($link) {
-				$link_title = $link['title'];
-				$link_url = $link['url'];
-			?>
-			<a href="<?php echo esc_url( $link_url ); ?>" class='locations-menu-btn'><?php echo $link_title; ?></a>
+		<div class="single-location-style">
 			<?php
+			the_title( "<h1 class='entry-title locations'>", "</h1>" );
+
+			if ( get_field('cta') ) {
+				$link = get_field('cta');
+				if ($link) {
+					$link_title = $link['title'];
+					$link_url = $link['url'];
+				?>
+				<a href="<?php echo esc_url( $link_url ); ?>" class='locations-menu-btn'><?php echo $link_title; ?></a>
+				<?php
 				}
 			}
 			?>
+		</div>
     </header>
 
 	<section class="location-info">
@@ -52,21 +56,21 @@ get_header();
 		<?php
 		if (get_field('map')) {
 		$location = get_field('map');
-		if( $location ): 
-		?>
-    	<div class="acf-map" data-zoom="16">
-       		<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
-    	</div>
-		<?php
-		endif;
+			if( $location ): 
+			?>
+				<div class="acf-map" data-zoom="16">
+					<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+				</div>
+			<?php
+			endif;
 		}
 		?>
 
 		<?php
 		if (get_field('location_address')) {
-		?>
-		<p><?php the_field('location_address'); ?></p>
-		<?php
+			?>
+			<p><?php the_field('location_address'); ?></p>
+			<?php
 		}
 		?>
 	</section>
@@ -83,14 +87,14 @@ get_header();
 			?>	
 
 			<?php if (have_rows('hours')) : ?>
-			<ul>
-				<?php while (have_rows('hours')) : the_row(); ?>
-					<li>
-						<?php the_sub_field('day'); ?>
-						<?php the_sub_field('hours'); ?>
-					</li>
-				<?php endwhile; ?>
-			</ul>
+				<ul>
+					<?php while (have_rows('hours')) : the_row(); ?>
+						<li>
+							<?php the_sub_field('day'); ?>
+							<?php the_sub_field('hours'); ?>
+						</li>
+					<?php endwhile; ?>
+				</ul>
 			<?php	
 			endif;
 			?>
@@ -103,6 +107,7 @@ get_header();
 				<h2><?php the_field('contact_title'); ?></h2>
 				<?php
 			}
+			
 			if ( get_field('phone') ) {
 				?>
 				<p><?php the_field('phone'); ?></p>

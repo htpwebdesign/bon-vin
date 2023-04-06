@@ -176,7 +176,6 @@
         }
     }
 
-
     .hero-img {
         position: relative;
 
@@ -204,16 +203,8 @@
 
     @media screen and (min-width: 51.25em) {
 
-        .House.Red {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .House.House.White {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
+        .House.Red,
+        .House.House.White,
         .House.House.Rosé {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -228,20 +219,11 @@
         }
     }
 
-
     @media screen and (min-width: 60.5em) {
-        .House.Red {
-            padding: 5rem;
-        }
-
-        .House.House.White {
-            padding: 5rem;
-
-        }
-
+        .House.Red,
+        .House.House.White,
         .House.House.Rosé {
             padding: 5rem;
-
         }
 
         .flexed-wine {

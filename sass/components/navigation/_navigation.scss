@@ -64,6 +64,7 @@ body {
       text-decoration: none;
     }
   }
+
   a {
     display: block;
     text-decoration: none;
@@ -84,6 +85,7 @@ body {
     background-color: $soft-pink;
     border: 2px solid $orange;
     z-index: 500;
+
     svg {
       width: 2rem;
     }
@@ -98,9 +100,11 @@ body {
 
   @media screen and (min-width: 37.5em) {
     background-color: $creme;
+
     .menu-toggle {
       display: none;
     }
+
     .nav-menu {
       position: relative;
     }
@@ -136,9 +140,11 @@ body {
   :hover {
     color: $orange;
   }
+
   .comment-navigation,
   .posts-navigation,
   .post-navigation {
+    
     .site-main & {
       margin: 0 0 1.5em;
     }

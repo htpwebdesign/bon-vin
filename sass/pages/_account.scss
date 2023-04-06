@@ -1,24 +1,62 @@
-#post-15 {
-    @include wrapper;
+.page-id-15.theme-bon-vin.woocommerce-account  {
 
-    p {
-        display: flex;
-        flex-direction: column;
-        width: 30%;
+    .site-main {
+        @include wrapper;
 
-        label {
-            padding-bottom: 1rem;
+        p {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+    
+            label {
+                padding-bottom: 1rem;
+            }
+    
+            button {
+                margin-left: 0;
+            }
         }
+    }
 
-        button {
-            margin-left: 0;
-        }
+    .site-footer {
+        background-color: $soft-pink;
     }
 }
 
-.page-id-15 {
+.page-id-15.logged-in {
 
-    footer {
-        background-color: $soft-pink;
+    .site-main {
+        @include wrapper;
+
+        p {
+            width: 100%
+        }
     }
+
+    .woocommerce {
+        @include wrapper;
+        display: flex;
+        flex-direction: column;
+
+        .woocommerce-MyAccount-content {
+            
+            p {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    @media (min-width: 50em) {
+
+        .site-main {
+            min-height: 60vh;
+        }
+
+        .woocommerce {
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
+
 }

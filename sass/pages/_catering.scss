@@ -1,4 +1,5 @@
 .page-id-32 {
+
   background-color: $creme;
 
   .site-main {
@@ -27,7 +28,6 @@
     width: 100%;
 
     svg {
-
       path {
         fill: $creme;
       }
@@ -106,12 +106,10 @@
     padding-top: 3rem;
   }
 
-  // .catering-form .ginput_container {
-  //   border: solid $green 3px;
-  // }
-
   @media (min-width: 56.25em) {
+
     .page-id-32 {
+      
       .catering-packages {
         text-align: left;
         padding-bottom: 3rem;
