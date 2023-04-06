@@ -1,17 +1,24 @@
 .page-id-14 {
   background-color: $creme;
+
   a {
-    color: $pink;
+    color: $green;
   }
+
   .woocommerce-info {
-    background-color: $creme;
-    width: 60%;
-    border-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: $soft-pink;
+    width: 100%;
+    padding: 1rem;
     margin: 0 auto;
-    color: $pink;
     text-align: center;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  #ship-to-different-address {
+    font-size: 1rem;
   }
 
   .checkout_coupon {
@@ -19,27 +26,42 @@
     margin-left: 20px;
     text-align: left;
   }
+
+  .cart_item {
+    text-align: center;
+  }
+
   .woocommerce-billing-fields__field-wrapper {
-    margin-left: 20px;
-    padding: 20px;
     border: $orange 2px solid;
     border-radius: 20px;
-    max-width: 80%;
+    padding: 1rem;
+  }
+
+  .woocommerce-billing-fields__field-wrapper,
+  .woocommerce-additional-fields__field-wrapper,
+  .woocommerce-checkout-review-order-table {
+    max-width: 60%;
     margin: 0 auto;
   }
 
-  .woocommerce-additional-fields__field-wrapper {
-    width: 90%;
-    margin: 0 auto;
-  }
   .woocommerce-checkout-review-order-table {
-    margin-left: 20px;
-    margin-right: 20px;
     border: solid $orange 1px;
     border-radius: 20px;
-    width: 70%;
     font-size: 1rem;
-    margin: 0 auto;
+    padding: 1rem;
+
+    tfoot {
+      text-align: center;
+    }
+  }
+
+  #shipping_method {
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
   }
 
   .woocommerce-notice {
@@ -47,14 +69,17 @@
     margin: 0 auto;
     align-content: center;
   }
+
   ul {
     margin-left: -40px;
     margin-top: 20px;
     font-size: 1.25rem;
   }
+
   input {
     border: $green 2px solid;
   }
+
   .woocommerce-privacy-policy-text {
     text-align: center;
     border: solid $orange 1px;
@@ -62,18 +87,29 @@
     margin-left: 20px;
     margin-right: 20px;
   }
+
   button {
     background-color: $pink;
-    margin-top: 20px;
-    padding: 10px;
-    margin-left: 20px;
+    @include button;
+    display: block;
+    margin: 2rem auto;
+    box-shadow: 3px 2px black;
+    transition: background-color .5s ease-in;
+  }
+
+  button:hover {
+    background-color: black;
+    color: $pink;
+  }
+
+  footer {
+    background-color: $soft-pink;
   }
 }
 
-@media (min-width: 43.75em) {
-  .page-id-14 {
-    .woocommerce-billing-fields {
-      text-align: left;
-    }
+@media (min-width: 50em) {
+
+  .woocommerce-billing-fields {
+    @include wrapper;
   }
 }

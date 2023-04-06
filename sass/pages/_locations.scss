@@ -7,7 +7,7 @@
 }
 
 .page-id-36 {
-    background-color: $soft-pink;
+    background-color: $creme;
 
     .footer-navigation {
 
@@ -34,8 +34,8 @@
 .location {
     position: relative;
 
-    img:hover {
-        opacity: 1;
+    img {
+        display: block;
     }
 }
 
@@ -94,6 +94,13 @@
 }
 
 // Single Location Pages
+
+.postid-77 {
+
+    .site-main {
+        margin-top: 0;
+    }
+}
 
 .entry-header.locations {
     position: relative;

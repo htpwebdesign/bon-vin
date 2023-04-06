@@ -241,5 +241,3 @@ function wporg_remove_dashboard_widget() {
 }
 
 add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
-
-

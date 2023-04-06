@@ -52,13 +52,13 @@
   .menu-style {
     width: 50%;
   }
-    padding-bottom: 3rem;
 
   .menu-item {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
   }
 
   h2 {
@@ -70,40 +70,38 @@
     margin-bottom: 1rem;
   }
 
-  .menu-item {
-    margin-bottom: 1rem;
+  h4 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 1rem;
+  }
 
-    h4 {
-      font-weight: 400;
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1rem;
-    }
+  p {
+    margin: 0;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 53.125em) {
   #menu-wine,
   #menu-food {
+
     .menu-style {
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 100%;
       justify-items: center;
+
       .menu-sub-section {
         width: 100%;
       }
+
       .menu-item {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         max-width: 50%;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0 auto;
 
         h4,
         p {

@@ -1,5 +1,12 @@
 .page-id-26 {
   background-color: $creme;
+
+  h1 {
+    color: $pink;
+    text-shadow: -4px 0px black;
+    text-transform: uppercase;
+  }
+  
   main {
     width: 90%;
     margin-left: auto;
@@ -58,15 +65,17 @@
     background-color: $pink;
     color: black;
     text-decoration: none;
-    border-radius: 10px;
-    padding: 0.25rem;
-    font-size: 1.2rem;
+    // border-radius: 10px;
+    // padding: 0.25rem;
+    font-size: 1rem;
     box-shadow: 3px 2px black;
     @include button;
+    transition: background-color .5s ease-in;
   }
 
   .careers-location a:hover {
-    background-color: $soft-pink;
+    background-color: black;
+    color: $soft-pink;
   }
 
   .career-job {
