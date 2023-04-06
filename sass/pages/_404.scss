@@ -1,0 +1,30 @@
+.error-404 {
+    color: $green;
+    padding-top: 3rem;
+}
+
+.page-404-content {
+    text-align: center;
+    padding-bottom: 12rem;
+
+    :hover {
+        color: $pink;
+    }
+
+    p {
+        color: $pink;
+        font-weight: bolder;
+    }
+
+    a {
+        align-content: center;
+        color: $orange;
+        font-weight: bolder;
+        // text-decoration: none;
+        padding: 1rem;
+
+        :hover {
+            color: $green;
+        }
+    }
+}

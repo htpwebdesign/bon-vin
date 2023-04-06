@@ -231,13 +231,85 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 //remove widgits
 
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'];
-// $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'];
-
-function wporg_remove_dashboard_widget() {
+function wporg_remove_all_dashboard_metaboxes() {
+	// Remove Welcome panel
+	remove_action( 'welcome_panel', 'wp_welcome_panel' );
+	// Remove the rest of the dashboard widgets
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_quick_draft', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
+	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
+	remove_meta_box( 'wc_admin_dashboard_setup', 'dashboard', 'normal');
+	remove_meta_box('dashboard_plugins',           'dashboard', 'normal');
+}
+add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
+
+/**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// Edit wysiwyg
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+function my_toolbars( $toolbars )
+{
+
+    $toolbars['Bon Vin Toolbar' ] = array();
+    $toolbars['Bon Vin Toolbar' ][1] = array( 'bullist' );
+
+	//  remove the 'Basic' toolbar completely
+    unset( $toolbars['Basic' ] );
+	unset( $toolbars['Full' ] );
+
+	return $toolbars;
 }
 
 add_action( 'wp_dashboard_setup', 'wporg_remove_dashboard_widget' );
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+
+function wporg_add_network_dashboard_widgets() {
+	
+	wp_add_dashboard_widget(
+		'bon_vin_tutorial_one',                          // Widget slug.
+		esc_html__( 'Adding products, changing featured wine, and how to get products to appear on menu.', 'bon-vin' ), // Title.
+		'bon_vin_tutorial_one_render'                    // Display function.
+	); 
+	wp_add_dashboard_widget(
+		'bon_vin_tutorial_two',                          // Widget slug.
+		esc_html__( 'Adding locations and career posts.' ), // Title.
+		'bon_vin_tutorial_two_render'                    // Display function.
+	);
+}
+add_action( 'wp_dashboard_setup', 'wporg_add_network_dashboard_widgets' );
+
+/**
+ * Create the function to output the content of our Dashboard Widget.
+ */
+function bon_vin_tutorial_one_render() {
+	?>
+	<iframe width="400" height="225" src="https://www.youtube.com/embed/CDYiYziukJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<?php
+}
+
+function bon_vin_tutorial_two_render() {
+	?>
+	<iframe width="400" height="225" src="https://www.youtube.com/embed/o8dt2MQj4H0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<?php
+}
+
+//admin menu bar
+function post_remove ()      //creating functions post_remove for removing menu item
+{ 
+   remove_menu_page('edit.php');
+   remove_menu_page( 'edit-comments.php' );
+}
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
